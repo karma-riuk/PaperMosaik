@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "ArnaudFauconnet 10/30/2023 16:47",
+	"super" : "BaselineOf",
+	"category" : "BaselineOfPaperMosaik",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BaselineOfPaperMosaik",
+	"type" : "normal"
+}

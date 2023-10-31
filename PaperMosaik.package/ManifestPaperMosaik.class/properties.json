@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "ArnaudFauconnet 10/30/2023 17:06",
+	"super" : "PackageManifest",
+	"category" : "PaperMosaik-Manifest",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ManifestPaperMosaik",
+	"type" : "normal"
+}
