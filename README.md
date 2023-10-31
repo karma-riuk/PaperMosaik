@@ -33,11 +33,14 @@ please follow the following steps:
 1. Select the `Pharo 10.0 - 64bit (old stable)` template
 1. Give the image a name, e.g. `PaperMosaik`
 1. Click on the pen icon
-  **NOTE**: if you have already followed these instructions, you can just select the appropriate script from the dropdown menu and create the new image
+
+**NOTE**: if you have already created the init script, you can just select it from the dropdown menu and create the new image
 
 ![create a new image](https://i.imgur.com/DerRWeZ.png)
 
 ### Create the initialization script
+
+> This step must be done only once
 
 An initialization script allows you execute some code upon creating a new image.
 It is especially useful if a previous image of yours somehow encountered
@@ -45,7 +48,7 @@ problems and you want to start anew. The script given below clones this repo,
 adds it Iceberg and loads the necessary packages. It does the same with Roassal.
 
 1. Click on the `+` icon to create a new script and give it a name, e.g. `papermosaik`
-1. Paste the following code in the right panel:
+2. Paste the following code in the right panel:
 ```st
 "Add credentials to be able to clone PaperMosaik"
 Iceberg enableMetacelloIntegration: true.
@@ -63,10 +66,11 @@ Metacello new
     repository: 'gitlab://gitlab.reveal.si.usi.ch:teaching/sde-atelier-design-101/d101-projects/2023/papermosaik:main';
     load.
 ```
-1. Change the `GITLAB_USERNAME` into your username
-1. Change the `GITLAB_API_TOKEN` into the personal access token you created in
-   the previous step
-1. Save the script
+3. Change the `GITLAB_USERNAME` into your username
+4. Change the `GITLAB_API_TOKEN` into the personal access token you created in
+   the very first step
+5. Save the script
+
 ![create the initialization script](https://i.imgur.com/ksjv7Il.png)
 
 ### Create the new image with the script
