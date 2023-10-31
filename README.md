@@ -10,7 +10,7 @@ Before cloning this repository, you must first create a **GitLab access token**.
 
 To do so:
 
-1. Click on your profile picture in the top-left corner of the screen.
+1. Click on your profile picture in the top-left corner of the screen, then select `Preferences`.
 2. Select `Access Tokens` in the sidebar.
 3. Click on the `Add new token` button.
 4. Give the token a name, for example, `Pharo PaperMosaik`.
