@@ -1,92 +1,76 @@
 # PaperMosaik
 
+## Setup
 
+### Before creating a new image
 
-## Getting started
+> This step must be done only once
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+In order to the clone this repo, you must first create a **gitlab access token**, .
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+To do so:
 
-## Add your files
+1. Click on your profile picture in the top left of the screen
+1. Select access `Access Tokens` in the sidebar
+1. Click on the `Add new token` button
+1. Give the token a name, e.g. `Pharo PaperMosaik`
+1. Give the token a reasonable expiring date, e.g. `2023-12-31`
+1. Check the `read_api` checkbox
+1. Check the `read_repository` checkbox
+1. Check the `write_repository` checkbox
+1. Click on the `Create personal access token`
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+![access token creation](https://i.imgur.com/kZxck13.png)
+![access token permissions](https://i.imgur.com/xTQBH9F.png)
 
+### Create the new image
+
+In order to setup a new Pharo 10 image with the code present on the main branch,
+please follow the following steps:
+
+1. Click on the `New` icon on the top left of the pharo launcher
+1. Select the `Official distributions` template category
+1. Select the `Pharo 10.0 - 64bit (old stable)` template
+1. Give the image a name, e.g. `PaperMosaik`
+1. Click on the pen icon
+  **NOTE**: if you have already followed these instructions, you can just select the appropriate script from the dropdown menu and create the new image
+
+![create a new image](https://i.imgur.com/DerRWeZ.png)
+
+### Create the initialization script
+
+An initialization script allows you execute some code upon creating a new image.
+It is especially useful if a previous image of yours somehow encountered
+problems and you want to start anew. The script given below clones this repo,
+adds it Iceberg and loads the necessary packages. It does the same with Roassal.
+
+1. Click on the `+` icon to create a new script and give it a name, e.g. `papermosaik`
+1. Paste the following code in the right panel:
+```st
+"Add credentials to be able to clone PaperMosaik"
+Iceberg enableMetacelloIntegration: true.
+Iceberg remoteTypeSelector: #httpsUrl.
+IceCredentialStore current
+    storeCredential: (IcePlaintextCredentials new
+        username: 'GITLAB_USERNAME';
+        password: 'GITLAB_API_TOKEN';
+        host: 'gitlab.reveal.si.usi.ch';
+        yourself).
+
+"Install PaperMosaik and dependencies"
+Metacello new
+    baseline: 'PaperMosaik';
+    repository: 'gitlab://gitlab.reveal.si.usi.ch:teaching/sde-atelier-design-101/d101-projects/2023/papermosaik:main';
+    load.
 ```
-cd existing_repo
-git remote add origin https://gitlab.reveal.si.usi.ch/teaching/sde-atelier-design-101/d101-projects/2023/papermosaik.git
-git branch -M main
-git push -uf origin main
-```
+1. Change the `GITLAB_USERNAME` into your username
+1. Change the `GITLAB_API_TOKEN` into the personal access token you created in
+   the previous step
+1. Save the script
+![create the initialization script](https://i.imgur.com/ksjv7Il.png)
 
-## Integrate with your tools
+### Create the new image with the script
 
-- [ ] [Set up project integrations](https://gitlab.reveal.si.usi.ch/teaching/sde-atelier-design-101/d101-projects/2023/papermosaik/-/settings/integrations)
+Now you can simply select the script you just created from the dropdown menu and
+create the new image. 
 
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
