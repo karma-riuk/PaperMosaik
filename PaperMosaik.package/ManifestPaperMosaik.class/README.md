@@ -1,1 +1,1 @@
-Entry point of the PaperMosaik project.
+Entry point of the PaperMosaik project. :)
