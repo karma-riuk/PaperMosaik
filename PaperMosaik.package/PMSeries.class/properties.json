@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "PMPublication",
+	"category" : "PaperMosaik",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "PMSeries",
+	"type" : "normal"
+}
