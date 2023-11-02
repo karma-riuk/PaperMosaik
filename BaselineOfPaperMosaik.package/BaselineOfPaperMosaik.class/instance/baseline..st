@@ -14,7 +14,7 @@ baseline: spec
 				baseline: 'Roassal3'
 				with: [ spec
 					repository: 'github://ObjectProfile/Roassal3/src';
-					loads: #('Full');
-					on: MCMergeOrLoadWarning do: [:warning | warning load ]
+					loads: #('Full')
+					
 				].
 		]
