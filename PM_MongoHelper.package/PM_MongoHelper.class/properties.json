@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "PM_MongoHelper",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"host",
+		"port",
+		"connection",
+		"database",
+		"collection"
+	],
+	"name" : "PM_MongoHelper",
+	"type" : "normal"
+}

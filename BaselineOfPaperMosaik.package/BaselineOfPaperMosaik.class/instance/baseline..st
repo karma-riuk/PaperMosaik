@@ -16,4 +16,16 @@ baseline: spec
 					repository: 'github://pharo-graphics/Roassal/src';
 					loads: #('Full')
 				].
+			spec 
+				baseline: 'MongoTalk'
+				with: [ spec 
+					repository: 'github://pharo-nosql/mongotalk/mc';
+					loads: #('Full')
+					 ].
+			spec 
+				baseline: 'XMLParser'
+				with: [ spec 
+					repository: 'github://pharo-contributions/XML-XMLParser/src';
+					loads: #('Full')
+					 ].
 		]
