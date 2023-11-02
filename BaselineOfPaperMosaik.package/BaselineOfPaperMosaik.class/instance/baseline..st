@@ -13,6 +13,7 @@ baseline: spec
 			spec 
 				baseline: 'Roassal3'
 				with: [ spec
-					repository: 'github://ObjectProfile/Roassal3/src'
+					repository: 'github://ObjectProfile/Roassal3/src';
+					loads: #('Full')
 				].
 		]
