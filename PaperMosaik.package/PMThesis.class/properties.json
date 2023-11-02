@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "PMEditorship",
+	"category" : "PaperMosaik",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "PMThesis",
+	"type" : "normal"
+}
