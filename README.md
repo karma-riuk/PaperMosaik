@@ -65,7 +65,7 @@ Metacello new
 Metacello new
 	repository: 'github://svenvc/NeoJSON/repository';
 	baseline: 'NeoJSON';
-	load
+	load.
 ```
 
 3. Replace `GITLAB_USERNAME` with your username.
