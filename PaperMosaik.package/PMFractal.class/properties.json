@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "AlessioGiovagnini 11/4/2023 10:17",
+	"super" : "Object",
+	"category" : "PaperMosaik-Fractal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "PMFractal",
+	"type" : "normal"
+}
