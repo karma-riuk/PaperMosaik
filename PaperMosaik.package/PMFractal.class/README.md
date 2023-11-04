@@ -11,11 +11,12 @@ Public API and Key Messages
 
 example:
 
+```st
 |canvas fractal|
 canvas := RSCanvas new.
 fractal := PMFractal draw: #( 3 5 4 2 1 2 7 1).
 canvas add: fractal.
-
+```
 
 - Internal method, this is used by the method draw to draw a rectangle
 	PMFractal makeCube: p1 to: p2  color: color
