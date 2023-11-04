@@ -1,3 +1,3 @@
 initialization
 setDatabase: dbName
-	database:= connection databaseNamed: 'PharoTest'.
+	database:= connection databaseNamed: dbName .

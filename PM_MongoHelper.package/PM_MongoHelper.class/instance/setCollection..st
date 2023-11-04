@@ -1,4 +1,4 @@
 initialization
 setCollection: conName
-	collection:=database getCollection: 'TestCollection'.
+	collection:=database getCollection: conName .
 
