@@ -10,8 +10,7 @@
 		"title",
 		"authors",
 		"url",
-		"year",
-		"dblpType"
+		"year"
 	],
 	"name" : "PMPublication",
 	"type" : "normal"
