@@ -12,6 +12,6 @@
 		"database",
 		"collection"
 	],
-	"name" : "PM_MongoHelper",
+	"name" : "PMMongoHelper",
 	"type" : "normal"
 }

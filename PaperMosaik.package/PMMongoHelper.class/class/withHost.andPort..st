@@ -1,7 +1,7 @@
 as yet unclassified
 withHost: host andPort: port
 	|newMongoHelper|	
-	newMongoHelper := PM_MongoHelper new.
+	newMongoHelper := PMMongoHelper new.
 	newMongoHelper host: host.
 	newMongoHelper port: port.
 	newMongoHelper connect.
