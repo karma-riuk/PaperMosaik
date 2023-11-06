@@ -19,13 +19,6 @@ baseline: spec
 			spec 
 				baseline: 'MongoTalk'
 				with: [ spec 
-					repository: 'github://pharo-nosql/mongotalk/mc';
-					loads: #('Full')
-					 ].
-			spec 
-				baseline: 'XMLParser'
-				with: [ spec 
-					repository: 'github://pharo-contributions/XML-XMLParser/src';
-					loads: #('Full')
+					repository: 'github://pharo-nosql/mongotalk/mc'
 					 ].
 		]
