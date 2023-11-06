@@ -1,18 +1,14 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "LorenzoZaniol 11/3/2023 20:38",
 	"super" : "Object",
 	"category" : "PaperMosaik",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"type",
-		"title",
-		"authors",
-		"url",
-		"year",
-		"dblpType"
+		"path",
+		"dictionaries"
 	],
-	"name" : "PMPublication",
+	"name" : "PMJsonToPaperMosaik",
 	"type" : "normal"
 }
