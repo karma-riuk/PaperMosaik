@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "Object",
-	"category" : "PM_MongoHelper",
+	"category" : "PaperMosaik",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
