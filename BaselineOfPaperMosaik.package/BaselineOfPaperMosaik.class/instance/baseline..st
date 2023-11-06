@@ -11,9 +11,9 @@ baseline: spec
 				
 			" Dependencies"
 			spec 
-				baseline: 'Roassal'
+				baseline: 'Roassal3'
 				with: [ spec
-					repository: 'github://pharo-graphics/Roassal/src';
+					repository: 'github://ObjectProfile/Roassal/src';
 					loads: #('Full')
 				].
 			spec 
