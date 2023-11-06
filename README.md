@@ -58,6 +58,10 @@ IceCredentialStore current
         yourself).
 
 "Install PaperMosaik and its dependencies"
+Metacello new
+    baseline: 'PaperMosaik';
+    repository: 'gitlab://gitlab.reveal.si.usi.ch:teaching/sde-atelier-design-101/d101-projects/2023/papermosaik:main';
+    load.
 ```
 
 3. Replace `GITLAB_USERNAME` with your username.
