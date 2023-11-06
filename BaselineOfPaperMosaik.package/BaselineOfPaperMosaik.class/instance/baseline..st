@@ -15,4 +15,9 @@ baseline: spec
 				with: [ spec
 					repository: 'github://ObjectProfile/Roassal3/src'
 				].
+			spec 
+				baseline: 'MongoTalk'
+				with: [ spec 
+					repository: 'github://pharo-nosql/mongotalk/mc'
+					 ].
 		]

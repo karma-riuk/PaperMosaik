@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "PaperMosaik",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"host",
+		"port",
+		"connection",
+		"database",
+		"collection"
+	],
+	"name" : "PMMongoHelper",
+	"type" : "normal"
+}
