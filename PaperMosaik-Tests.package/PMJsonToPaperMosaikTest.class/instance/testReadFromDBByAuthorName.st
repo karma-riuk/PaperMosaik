@@ -1,7 +1,8 @@
 test
 testReadFromDBByAuthorName
-	|pm result name|
+	|pm result name dicts|
 	pm := PMJsonToPaperMosaik new.
 	name:='Michele Lanza'.
 	result:=pm readFromDBByAuthorName: name. 
-	self assert: (result isMemberOf: Collection)
+	dicts:= pm dictionaries. 
+	self assert: result equals: dicts 
