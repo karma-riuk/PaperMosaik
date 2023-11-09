@@ -7,7 +7,12 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"path",
-		"dictionaries"
+		"dictionaries",
+		"dbHost",
+		"port",
+		"dbName",
+		"collection",
+		"mongoHelper"
 	],
 	"name" : "PMJsonToPaperMosaik",
 	"type" : "normal"
