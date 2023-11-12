@@ -5,7 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [
-		"venues"
+		"Venues"
 	],
 	"instvars" : [
 		"name",

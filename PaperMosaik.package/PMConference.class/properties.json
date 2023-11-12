@@ -5,11 +5,12 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [
-		"conferences"
+		"Conferences"
 	],
 	"instvars" : [
 		"name",
-		"editions"
+		"editions",
+		"venue"
 	],
 	"name" : "PMConference",
 	"type" : "normal"

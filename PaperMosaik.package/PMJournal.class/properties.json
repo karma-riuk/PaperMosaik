@@ -5,10 +5,11 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [
-		"journals"
+		"Journals"
 	],
 	"instvars" : [
-		"name"
+		"name",
+		"venue"
 	],
 	"name" : "PMJournal",
 	"type" : "normal"

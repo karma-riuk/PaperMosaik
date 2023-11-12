@@ -1,5 +1,5 @@
 adding
 addJournalIfNotPresent: aJournal
     
-journals ifNil: [journals := Dictionary new].
-(journals at: aJournal name ifAbsent: [nil]) ifNil: [journals at: aJournal name put: aJournal].
+Journals ifNil: [Journals := Dictionary new].
+(Journals at: aJournal name ifAbsent: [nil]) ifNil: [Journals at: aJournal name put: aJournal].

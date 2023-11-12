@@ -1,3 +1,3 @@
 accessing
-journals
-^ journals  .
+Journals
+^ Journals  .

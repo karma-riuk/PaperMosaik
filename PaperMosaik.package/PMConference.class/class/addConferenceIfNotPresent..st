@@ -1,5 +1,5 @@
 adding
 addConferenceIfNotPresent: aConference
     
-conferences ifNil: [conferences := Dictionary new].
-(conferences at: aConference name ifAbsent: [nil]) ifNil: [conferences at: aConference name put: aConference].
+Conferences ifNil: [Conferences := Dictionary new].
+(Conferences at: aConference name ifAbsent: [nil]) ifNil: [Conferences at: aConference name put: aConference].

@@ -1,3 +1,3 @@
 accessing
-conferences
-^ conferences .
+Conferences
+^ Conferences .
