@@ -1,13 +1,17 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "LorenzoVarese 11/12/2023 22:31",
 	"super" : "Object",
-	"category" : "PaperMosaik",
+	"category" : "PaperMosaik-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [ ],
+	"classvars" : [
+		"authors"
+	],
 	"instvars" : [
-		"pid",
-		"name"
+		"id",
+		"name",
+		"coAuthors",
+		"publications"
 	],
 	"name" : "PMAuthor",
 	"type" : "normal"
