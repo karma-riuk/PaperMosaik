@@ -5,4 +5,4 @@ c := self new.
 c id: aId .
 c name: aName. 
 ^ c."
-^ self new idAuthor: aId ; authorName: aName .
+^ self new authorId: aId ; authorName: aName .
