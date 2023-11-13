@@ -4,9 +4,7 @@
 	"category" : "PaperMosaik-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [
-		"Venues"
-	],
+	"classvars" : [ ],
 	"instvars" : [
 		"name"
 	],
