@@ -1,8 +1,8 @@
 drawing - rectangles
-draw: aList authorName: authorName
+draw: aDict authorName: authorName
 
 	| group label person|
-	group := self draw: aList.
+	group := self draw: aDict.
 	
 	label := RSLabel new text: authorName.
 	RSLocation new above; move: group on: label.

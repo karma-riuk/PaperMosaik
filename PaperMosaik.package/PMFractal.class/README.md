@@ -1,30 +1,30 @@
 "I draw fractal images"
 
-"I return a shape that can be added to a canvas"
+"I return a shape that can be added to a canvas with a label"
 
 "I am a static class"
 
 Public API and Key Messages
 
 - How to create a fractal.
-	PMFractal draw: anArray  
+	PMFractal draw: aDictionary authorName: aName  
 
 example:
 
 ```st
 |canvas fractal|
 canvas := RSCanvas new.
-fractal := PMFractal draw: #( 3 5 4 2 1 2 7 1).
 
-fractal2 := PMFractal draw: #( 3 5 4 2 1 2 7 1) authorName: 'Michele Lanza'.
+dict := Dictionary newFrom: { 'a' -> 3 . 'b' -> 5 . 'd' -> 2 }.
+
+fractal := PMFractal draw: dict authorName: 'example name'.
 
 canvas add: fractal.
 
-canvas add: fractal2.
 ```
 
-- Internal method, this is used by the method draw to draw a rectangle
-	PMFractal makeCube: p1 to: p2  color: color
+- Internal method, this is used by the method draw to draw a rectangle with a color and a label shown when hovering
+	PMFractal makeCube: p1 to: p2  color: color label 'label'
 	p1 and p2 are Point like:	 (0 @ 10)
 	color is like:	 Color red
 	it will return a RSPolygon:

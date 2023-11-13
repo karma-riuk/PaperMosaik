@@ -1,7 +1,7 @@
 drawing - rectangles
-draw: aList
-	"draw a fractal from a list"
-	| sortedList group total isVertical deltaX deltaY maxSize maxArea currentMaxEdgeX currentMaxEdgeY colorPalette iteration|
+draw: aDict
+	"draw a fractal from a dictionary"
+	| sortedDict group total isVertical deltaX deltaY maxSize maxArea currentMaxEdgeX currentMaxEdgeY colorPalette iteration|
 	"final immutable variable"
 	colorPalette := OrderedCollection new. "for now the color is hard-coded"
 	colorPalette add: Color red; add: Color blue; add: Color green; add: Color orange; add: Color purple; add: Color yellow.
@@ -18,23 +18,23 @@ draw: aList
 	currentMaxEdgeX := maxSize. "currently the size of the max edge on x axis"
 	currentMaxEdgeY := maxSize. "same as above but for y axis"
 	
-	sortedList := aList sorted reversed. "sort and reverse the list"
-	total := aList sum. "summ of all the element in the array"
+	sortedDict := (aDict associations sort: #value descending ) collect: #key. "collect keys sorted by values"
+	total := aDict inject: 0 into: [ :sum :each | sum + (each value) ]. "sum the total values"
 	
-	sortedList do: [:element | 
+	sortedDict do: [:currentKey | 
 		| part shape size coverArea |
-		part := (element / total) asFloat. "percentage of the element respect to the total"
+		part := ((aDict at: currentKey  ) / total) asFloat. "percentage of the element respect to the total"
 		coverArea := maxArea * part. "area that the shape should cover"
 		
 		isVertical ifTrue: [ " vertical setup "
 			size := (coverArea / currentMaxEdgeX ) asFloat. "size of the other edge"											"use a modulo finction to choose the color"
-			shape := self makeCube: (deltaX @ deltaY ) to: (maxSize @ (deltaY + size)  ) color: (colorPalette at: ((iteration % colorPalette size) + 1)).
+			shape := self makeCube: (deltaX @ deltaY ) to: (maxSize @ (deltaY + size)  ) color: (colorPalette at: ((iteration % colorPalette size) + 1)) label: currentKey .
 			deltaY := deltaY + size. "update delta, origin of the next cube"
 			currentMaxEdgeY := currentMaxEdgeY - size. "update the size of the edge"
 			
 		]  ifFalse: [ " Horizontal setup "
 			size := (coverArea / currentMaxEdgeY ) asFloat. "size of the other edge"
-			shape := self makeCube: (deltaX @ deltaY ) to: (  (deltaX + size )@ maxSize ) color: (colorPalette at: ((iteration % colorPalette size) + 1)) .
+			shape := self makeCube: (deltaX @ deltaY ) to: (  (deltaX + size )@ maxSize ) color: (colorPalette at: ((iteration % colorPalette size) + 1)) label: currentKey .
 			deltaX := deltaX + size. "update delta, origin of the next cube"
 			currentMaxEdgeX := currentMaxEdgeX - size. "update the size of the edge"
 		
