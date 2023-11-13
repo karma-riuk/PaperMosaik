@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "LorenzoVarese 11/12/2023 22:29",
+	"super" : "Object",
+	"category" : "PaperMosaik-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"issueNumber",
+		"publications",
+		"journalVolume"
+	],
+	"name" : "PMJournalIssue",
+	"type" : "normal"
+}
