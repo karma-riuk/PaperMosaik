@@ -10,7 +10,7 @@ draw: aList
 	group := RSGroup new.
 	
 	"mutable variables"
-	iteration := 0. "the current itteration, used to select the color"
+	iteration := 0. "the current iteration, used to select the color"
 	isVertical := false. "boolean to distinguish if the rectangle draw is going to be vertical or horizontal"
 	"The origins of every new cube, they are updated every iteration"
 	deltaX := 0.0. 
