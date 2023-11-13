@@ -15,7 +15,12 @@ example:
 |canvas fractal|
 canvas := RSCanvas new.
 fractal := PMFractal draw: #( 3 5 4 2 1 2 7 1).
+
+fractal2 := PMFractal draw: #( 3 5 4 2 1 2 7 1) authorName: 'Michele Lanza'.
+
 canvas add: fractal.
+
+canvas add: fractal2.
 ```
 
 - Internal method, this is used by the method draw to draw a rectangle
