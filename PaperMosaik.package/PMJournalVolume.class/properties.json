@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "LorenzoVarese 11/12/2023 22:30",
-	"super" : "PMJournal",
+	"super" : "Object",
 	"category" : "PaperMosaik-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
@@ -8,7 +8,8 @@
 	"instvars" : [
 		"volume",
 		"issues",
-		"publicationsWithoutIssueNumber"
+		"publications",
+		"journal"
 	],
 	"name" : "PMJournalVolume",
 	"type" : "normal"

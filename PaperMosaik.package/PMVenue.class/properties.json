@@ -8,9 +8,7 @@
 		"Venues"
 	],
 	"instvars" : [
-		"name",
-		"conferences",
-		"journals"
+		"name"
 	],
 	"name" : "PMVenue",
 	"type" : "normal"

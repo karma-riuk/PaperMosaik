@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "LorenzoVarese 11/12/2023 22:30",
-	"super" : "Object",
+	"super" : "PMVenue",
 	"category" : "PaperMosaik-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
@@ -8,9 +8,7 @@
 		"Conferences"
 	],
 	"instvars" : [
-		"name",
-		"editions",
-		"venue"
+		"editions"
 	],
 	"name" : "PMConference",
 	"type" : "normal"

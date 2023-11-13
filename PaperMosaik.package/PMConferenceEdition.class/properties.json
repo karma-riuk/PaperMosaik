@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"year"
+		"year",
+		"publications"
 	],
 	"name" : "PMConferenceEdition",
 	"type" : "normal"
