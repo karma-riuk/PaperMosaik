@@ -5,5 +5,4 @@ addAuthorIfNotPresent: anAuthor
     If the author is not present, it adds them to the dictionary; 
     otherwise, it does nothing."
 
-    Authors ifNil: [Authors := Dictionary new].
     (Authors at: anAuthor id ifAbsent: [nil]) ifNil: [Authors at: anAuthor id put: anAuthor].
