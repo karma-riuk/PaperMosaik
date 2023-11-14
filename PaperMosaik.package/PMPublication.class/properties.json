@@ -6,6 +6,7 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
+		"publicationId",
 		"title",
 		"authors",
 		"url",
