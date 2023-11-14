@@ -4,8 +4,8 @@ create: aName withCoauthors: coauthors withPapers: papers withId: id
 	"scope: class-variables  &  class-instance-variables"	
 	|newAuthor|
 	newAuthor := PMAuthor new.
-	newAuthor setName: aName.
+	newAuthor authorName: aName.
 	newAuthor setCoauthors: coauthors .
 	newAuthor setPapers: papers .
-	newAuthor setId: id.
+	newAuthor authorId: id.
 	^ newAuthor .
