@@ -5,7 +5,7 @@ createAuthorsCollection
 	targetCollection := database getCollection: 'Authors'.
 	"name to a dict of year to coauthor and year to papers"
 	authors := Dictionary new.
-	2000 to: 2002 do: [ :i | 
+	1936 to: 2024 do: [ :i | 
 		authors := self createAuthorsCollectionHelper: i asString.
 		authors do: [ :author| 
 			tmp := targetCollection  detect: { 'name'-> (author at: 'name')} .

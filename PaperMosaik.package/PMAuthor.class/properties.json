@@ -7,7 +7,9 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"pid",
-		"name"
+		"name",
+		"yearToCoauthor",
+		"yearToPaper"
 	],
 	"name" : "PMAuthor",
 	"type" : "normal"
