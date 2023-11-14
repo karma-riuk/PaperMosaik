@@ -9,15 +9,15 @@ baseline: spec
 				package: 'PaperMosaik';
 				package: 'PaperMosaik-Tests' with: [ spec requires: #('PaperMosaik') ].
 				
-			" Dependencies"
-			spec 
-				baseline: 'Roassal3'
-				with: [ spec
-					repository: 'github://ObjectProfile/Roassal3/src'
-				].
+			" Dependencies "
 			spec 
 				baseline: 'MongoTalk'
 				with: [ spec 
 					repository: 'github://pharo-nosql/mongotalk/mc'
-					 ].
+				].
+			spec 
+				baseline: 'NeoJSON' 
+				with: [ spec
+					 repository: 'github://svenvc/NeoJSON/repository' 
+				].
 		]

@@ -1,0 +1,1 @@
+I represent a single edition of a conference

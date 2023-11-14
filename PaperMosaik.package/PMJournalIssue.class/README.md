@@ -1,0 +1,1 @@
+I represent a single issue of a single volume of a single journal
