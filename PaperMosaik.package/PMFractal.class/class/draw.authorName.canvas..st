@@ -4,7 +4,7 @@ draw: aDict authorName: authorName canvas: canvas
 	| group label person icon blank compositeName iconComposite|
 	group := self draw: aDict.
 	
-	icon := self makeIcon.
+	icon := self makeDraggableIcon: 4 withColor:  Color black.
 	blank := RSBox new color: Color transparent  .
 	RSLocation new outer; left; move: icon on: blank .
 	
@@ -21,7 +21,7 @@ draw: aDict authorName: authorName canvas: canvas
 	
 	RSLocation new above; move: group on: compositeName .
 
-	person := RSComposite new color: Color white .
+	person := RSComposite new .
 	person shapes: { group . compositeName}.
 	person @ RSDraggable.
 	
