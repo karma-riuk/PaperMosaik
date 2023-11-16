@@ -12,5 +12,5 @@ testAddJournalInJournals
 
 	self assert: ((PMJournal Journals at: nexistingJournalName) name) equals: journal name .
 
-	journal := (PMJournal Journals) at: nexistingJournalName ifAbsent: [nil].
+	journal := PMJournal Journals at: nexistingJournalName ifAbsent: [nil].
 	self assert: journal notNil.
