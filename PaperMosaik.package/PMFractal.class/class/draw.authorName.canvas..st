@@ -4,7 +4,7 @@ draw: aDict authorName: authorName canvas: canvas
 	| group label person icon blank compositeName iconComposite|
 	group := self draw: aDict.
 	
-	icon := RSBox new color: Color black.
+	icon := self makeIcon.
 	blank := RSBox new color: Color transparent  .
 	RSLocation new outer; left; move: icon on: blank .
 	
