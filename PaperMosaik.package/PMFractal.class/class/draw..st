@@ -2,10 +2,14 @@ drawing - rectangles
 draw: aDict
 	"draw a fractal from a dictionary"
 	| sortedDict group total isVertical deltaX deltaY maxSize maxArea currentMaxEdgeX currentMaxEdgeY colorPalette iteration|
+	
+	sortedDict := (aDict associations sort: #value descending ) collect: #key. "collect keys sorted by values"
+	total := aDict inject: 0 into: [ :sum :each | sum + (each value) ]. "sum the total values"
+	
 	"final immutable variable"
 	colorPalette := OrderedCollection new. "for now the color is hard-coded"
 	colorPalette add: Color red; add: Color blue; add: Color green; add: Color orange; add: Color purple; add: Color yellow.
-	maxSize := 100. "for now the size is hard-coded, the returned shape can still be moved and resized"
+	maxSize := 10 * total . "Size is proportional of the total value"
 	maxArea := maxSize * maxSize.
 	group := RSGroup new.
 	
@@ -17,9 +21,7 @@ draw: aDict
 	deltaY := 0.0. 
 	currentMaxEdgeX := maxSize. "currently the size of the max edge on x axis"
 	currentMaxEdgeY := maxSize. "same as above but for y axis"
-	
-	sortedDict := (aDict associations sort: #value descending ) collect: #key. "collect keys sorted by values"
-	total := aDict inject: 0 into: [ :sum :each | sum + (each value) ]. "sum the total values"
+
 	
 	sortedDict do: [:currentKey | 
 		| part shape size coverArea |
