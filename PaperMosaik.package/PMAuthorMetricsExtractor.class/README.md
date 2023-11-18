@@ -53,4 +53,4 @@ publicationCounterMock at: '2005' put: currentYearDictionary.
 
 mockExtractor publicationCountersByTypeByYear: publicationCounterMock
 
-"Now the 'mockExtractor' its ready to be used by the Fractal Figures"
+"Now the 'mockExtractor' instance is ready to be used by the Fractal Figures"
