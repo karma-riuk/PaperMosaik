@@ -1,5 +1,5 @@
 accessing
-publicationCounterByType: anYear
+publicationCountersByType: anYear
 
 	(publicationCountersByTypeByYear includesKey: anYear)
 		ifTrue: [ ^(publicationCountersByTypeByYear at: anYear) ]
