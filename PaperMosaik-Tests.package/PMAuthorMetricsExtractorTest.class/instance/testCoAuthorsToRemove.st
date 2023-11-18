@@ -2,8 +2,8 @@ tests
 testCoAuthorsToRemove
     |  metricsExtractor yearWithCoAuthors yearWithoutCoAuthors existingCoAuthors temporaryCoAuthors |
 	 metricsExtractor := PMAuthorMetricsExtractor new .
-    yearWithCoAuthors := '2020'.
-    yearWithoutCoAuthors := '2019'.
+    yearWithCoAuthors := 2020.
+    yearWithoutCoAuthors := 2019.
     existingCoAuthors := OrderedCollection new.
     existingCoAuthors add: (PMAuthor withAuthorId: 'Author001' withAuthorName: 'AuthorName1').
     existingCoAuthors add: (PMAuthor withAuthorId: 'Author002' withAuthorName: 'AuthorName2').
