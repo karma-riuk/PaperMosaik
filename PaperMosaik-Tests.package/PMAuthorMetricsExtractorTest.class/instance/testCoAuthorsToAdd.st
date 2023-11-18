@@ -15,5 +15,4 @@ testCoAuthorsToAdd
     self assert: temporaryCoAuthors equals: existingCoAuthors.
 
     "Test for a year without co-authors"
-    temporaryCoAuthors := metricsExtractor coAuthorsToAdd: yearWithoutCoAuthors.
-    self assert: temporaryCoAuthors isNil.
+	 self should: [metricsExtractor coAuthorsToAdd: yearWithoutCoAuthors] raise: Error.
