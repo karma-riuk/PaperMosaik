@@ -10,7 +10,9 @@
 		"port",
 		"connection",
 		"database",
-		"collection"
+		"collection",
+		"user",
+		"pass"
 	],
 	"name" : "PMMongoHelper",
 	"type" : "normal"

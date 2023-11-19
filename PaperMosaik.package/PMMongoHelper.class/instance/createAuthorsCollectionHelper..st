@@ -13,11 +13,11 @@ createAuthorsCollectionHelper: year
 				auCopy addAll: au.
 				auCopy remove: author.
 				tmpPaper := OrderedCollection new.
-				tmpPaper add: (paper at: '_id').
+				tmpPaper add: (paper at: 'key').
 				
 				(authors includesKey: author) 
 				ifTrue: [  (((authors at: (author at: 'name')) at: 'coauthorsByYear') at: year) addAll: auCopy.
-					(((authors at: author) at: 'parseByYear') at: year) add: (paper at: '_id')] 
+					(((authors at: author) at: 'parseByYear') at: year) add: (paper at: 'key')] 
 				ifFalse: [  authors at: (author at: 'name') put: 
 					{ 'name'-> (author at: 'name').
 					'coauthorsByYear'->{year-> auCopy} asDictionary. 
