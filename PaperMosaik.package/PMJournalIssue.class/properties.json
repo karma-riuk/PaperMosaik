@@ -8,7 +8,8 @@
 	"instvars" : [
 		"issueNumber",
 		"publications",
-		"journalVolume"
+		"journal",
+		"volume"
 	],
 	"name" : "PMJournalIssue",
 	"type" : "normal"
