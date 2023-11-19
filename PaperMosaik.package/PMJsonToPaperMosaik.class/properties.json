@@ -12,7 +12,9 @@
 		"port",
 		"dbName",
 		"collection",
-		"mongoHelper"
+		"mongoHelper",
+		"user",
+		"pass"
 	],
 	"name" : "PMJsonToPaperMosaik",
 	"type" : "normal"
