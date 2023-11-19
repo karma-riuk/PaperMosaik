@@ -39,5 +39,5 @@ animate: author with: metricsExtractor
         ].
 "    canvas camera translateBy: 0 @ -100."
     canvas zoomToFit.
-    
+    canvas open.
     ^ canvas

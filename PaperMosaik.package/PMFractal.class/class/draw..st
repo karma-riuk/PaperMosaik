@@ -11,7 +11,7 @@ draw: aDict
 	"final immutable variable"
 	colorPalette := OrderedCollection new. "for now the color is hard-coded"
 	colorPalette add: Color red; add: Color blue; add: Color green; add: Color orange; add: Color purple; add: Color yellow.
-	maxSize := 10 * total. "Size is proportional of the total value"
+	maxSize := total. "Size is proportional of the total value"
 	maxArea := maxSize * maxSize.
 	group := RSGroup new.
 	
