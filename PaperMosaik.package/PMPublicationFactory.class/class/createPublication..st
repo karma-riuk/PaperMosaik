@@ -2,17 +2,38 @@ as yet unclassified
 createPublication: dbPublication
 	|type newPub|
 	type:= dbPublication at: 'xmlTag'.
-	type = 'article' ifTrue: [ newPub := newPub := PMJournalArticle  withPublicationId: (dbPublication at:'_id' ) withTitle:  (dbPublication at: 'title')withAuthors: (dbPublication at: 'authors' ) withUrl:  (dbPublication at: 'url') withYear: (dbPublication at: 'year') withEe:  (dbPublication at: 'ee') withNumberOfPages:(dbPublication at:'pages' ).
-		newPub journalReference: (dbPublication at: 'journal').
+	type = 'article' ifTrue: [ newPub := newPub := PMJournalArticle  
+		withPublicationId: (self prvtFindOrNil: dbPublication  key: '_id' ) 
+		withTitle:  (self prvtFindOrNil: dbPublication  key: 'title')
+		withAuthors: (self prvtFindOrNil: dbPublication  key:'authors' ) 
+		withUrl:  (self prvtFindOrNil: dbPublication  key: 'url') 
+		withYear: (self prvtFindOrNil: dbPublication  key: 'year') 
+		withEe:  (self prvtFindOrNil: dbPublication  key: 'ee') 
+		withNumberOfPages:(self prvtFindOrNil: dbPublication  key:'pages' ).
+		newPub journalReference: (self prvtFindOrNil: dbPublication  key:'journal').
 		^ newPub .].
 	
-	type = 'incollection' ifTrue: [ newPub :=  PMBook   withPublicationId: (dbPublication at:'_id' ) withTitle:  (dbPublication at: 'title')withAuthors: (dbPublication at: 'authors' ) withUrl:  (dbPublication at: 'url') withYear: (dbPublication at: 'year') withEe:  (dbPublication at: 'ee') withNumberOfPages:(dbPublication at:'pages' ).
-		newPub bookTitle: (dbPublication at: 'booktitle').
-		newPub crossReference: (dbPublication at: 'crossref').
+	type = 'incollection' ifTrue: [ newPub :=  PMBook   
+		withPublicationId: (self prvtFindOrNil: dbPublication  key:'_id' )
+		 withTitle:  (self prvtFindOrNil: dbPublication  key: 'title')
+		withAuthors: (self prvtFindOrNil: dbPublication  key: 'authors' ) 
+		withUrl:  (self prvtFindOrNil: dbPublication  key: 'url') 
+		withYear: (self prvtFindOrNil: dbPublication  key: 'year') 
+		withEe:  (self prvtFindOrNil: dbPublication  key: 'ee') 
+		withNumberOfPages:(self prvtFindOrNil: dbPublication  key:'pages' ).
+		newPub bookTitle: (self prvtFindOrNil: dbPublication  key:'booktitle').
+		newPub crossReference: (self prvtFindOrNil: dbPublication  key:'crossref').
 		^ newPub .].
 	
 	
-	type = 'inproceedings' ifTrue: [newPub := PMConferencePaper withPublicationId: (dbPublication at:'_id' ) withTitle:  (dbPublication at: 'title')withAuthors: (dbPublication at: 'authors' ) withUrl:  (dbPublication at: 'url') withYear: (dbPublication at: 'year') withEe:  (dbPublication at: 'ee') withNumberOfPages:(dbPublication at:'pages' ).
-		newPub crossReference:  (dbPublication at: 'crossref').
-		newPub bookTitle: (dbPublication at: 'booktitle'). 
+	type = 'inproceedings' ifTrue: [newPub := PMConferencePaper 
+		withPublicationId: (self prvtFindOrNil: dbPublication  key:'_id' ) 
+		withTitle:  (self prvtFindOrNil: dbPublication  key: 'title')
+		withAuthors: (self prvtFindOrNil: dbPublication  key:'authors' ) 
+		withUrl:  (self prvtFindOrNil: dbPublication  key: 'url') 
+		withYear: (self prvtFindOrNil: dbPublication  key: 'year') 
+		withEe:  (self prvtFindOrNil: dbPublication  key: 'ee') 
+		withNumberOfPages:(self prvtFindOrNil: dbPublication  key: 'pages' ).
+		newPub crossReference:  (self prvtFindOrNil: dbPublication  key:'crossref').
+		newPub bookTitle: (self prvtFindOrNil: dbPublication  key: 'booktitle'). 
 		^ newPub ].

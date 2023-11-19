@@ -12,6 +12,7 @@ getAuthor: name
 		yor coAuthors: (foundAuthor at: 'coauthorsByYear').
 		paperKeys := (foundAuthor at: 'papersByYear') at: year.
 		pubs := OrderedCollection new.
+		"TODO: reduce number of db calls."
 		paperKeys do: [ :paperKey |
 			pubs add:(PMPublicationFactory createPublication: (self getPaperByKey: paperKey ))
 			]. 
