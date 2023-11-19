@@ -1,6 +1,7 @@
 I represent the extractor of data that is required for the visualization.
 
-*** Here an example for generating a mock (copy and paste the following code in the Playground):
+### Here an example for generating a mock (copy and paste the following code in the Playground):
+```st
 
 mockAuthor := PMAuthor withAuthorId: 'MicheleLanza001' withAuthorName: 'Michele Lanza' .
 mockExtractor := PMAuthorMetricsExtractor withAuthor: mockAuthor withStartingYear: 1999 withEndingYear: 2005 .
@@ -28,4 +29,6 @@ mockExtractor addPublicationCountersForYear: 2004 publicationCounters: currentYe
 currentYearDictionary := Dictionary new at: 'JournalArticle' put: 7 ; at: 'ConferencePaper' put: 24 ; at: 'Book' put: 2 ; yourself .
 mockExtractor addPublicationCountersForYear: 2005 publicationCounters: currentYearDictionary.
 
+
 "Now the 'mockExtractor' instance is ready to be used by the Fractal Figures"
+```

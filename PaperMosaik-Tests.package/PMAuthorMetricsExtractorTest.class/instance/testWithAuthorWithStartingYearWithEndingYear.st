@@ -3,8 +3,10 @@ testWithAuthorWithStartingYearWithEndingYear
 	| anAuthor anInstanceOfExtractor |
 	"Invalid input"
     anAuthor := PMAuthor withAuthorId: 'Lanza001' withAuthorName: 'Lanza'.
-    anInstanceOfExtractor := PMAuthorMetricsExtractor withAuthor: anAuthor withStartingYear: 2001 withEndingYear: 1999.
-    self assert: anInstanceOfExtractor isNil.
+    self should: [ PMAuthorMetricsExtractor withAuthor: anAuthor withStartingYear: 2001 withEndingYear: 1999 ] raise: Error.
+    self should: [ PMAuthorMetricsExtractor withAuthor: anAuthor withStartingYear: '1999' withEndingYear: 2001 ] raise: Error.
+    self should: [ PMAuthorMetricsExtractor withAuthor: anAuthor withStartingYear: 1999 withEndingYear: '2001' ] raise: Error.
+    self should: [ PMAuthorMetricsExtractor withAuthor: anAuthor withStartingYear: '1999' withEndingYear: '2001' ] raise: Error.
 	
 	"Valid input"
 	anAuthor := PMAuthor withAuthorId: 'Lanza002' withAuthorName: 'Lanza'.
