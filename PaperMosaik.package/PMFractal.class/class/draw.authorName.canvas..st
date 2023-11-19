@@ -26,4 +26,5 @@ draw: aDict authorName: authorName canvas: canvas
 	person @ RSDraggable.
 	
 	canvas add: person .
+	^person.
 	
