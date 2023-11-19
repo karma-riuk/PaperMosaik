@@ -1,4 +1,4 @@
 testing
 isJournalInJournals: aJournalName
 
-	^(Journals includesKey: aJournalName)
+	^(self Journals includesKey: aJournalName)
