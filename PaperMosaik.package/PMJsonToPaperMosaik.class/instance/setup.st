@@ -2,7 +2,7 @@ setup
 setup
 	|tempHelper return|
 	port:=27017.
-	dbName:='PharoTest'.
+	dbName:='admin'.
 	collection:='Papers'.
 	
 	return:=(dbHost isNil) not. "if is nil->ERROR First set DB Type, then do setup->return false"
@@ -12,6 +12,7 @@ setup
 	"tempHelper user: user.
 	tempHelper pass: pass.
 	tempHelper setDatabase: dbName."
+	tempHelper setDatabase: 'PharoTest'.
 	tempHelper setCollection: collection.
 
 	mongoHelper:= tempHelper.
