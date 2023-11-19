@@ -32,13 +32,15 @@ draw: aDict
 		
 		isVertical ifTrue: [ " vertical setup "
 			size := (coverArea / currentMaxEdgeX ) asFloat. "size of the other edge"											"use a modulo finction to choose the color"
-			shape := self makeCube: (deltaX @ deltaY ) to: (maxSize @ (deltaY + size)  ) color: (colorPalette at: ((iteration % colorPalette size) + 1)) label: currentKey .
+			shape := self makeCube: (deltaX @ deltaY ) to: (maxSize @ (deltaY + size)  ) color: (colorPalette at: ((iteration % colorPalette size) + 1)) label: 
+			(currentKey asString , ': ', (aDict at: currentKey) asString , '/' , total asString).
 			deltaY := deltaY + size. "update delta, origin of the next cube"
 			currentMaxEdgeY := currentMaxEdgeY - size. "update the size of the edge"
 			
 		]  ifFalse: [ " Horizontal setup "
 			size := (coverArea / currentMaxEdgeY ) asFloat. "size of the other edge"
-			shape := self makeCube: (deltaX @ deltaY ) to: (  (deltaX + size )@ maxSize ) color: (colorPalette at: ((iteration % colorPalette size) + 1)) label: currentKey .
+			shape := self makeCube: (deltaX @ deltaY ) to: (  (deltaX + size )@ maxSize ) color: (colorPalette at: ((iteration % colorPalette size) + 1)) label: 
+			(currentKey asString , ': ', (aDict at: currentKey) asString , '/' , total asString).
 			deltaX := deltaX + size. "update delta, origin of the next cube"
 			currentMaxEdgeX := currentMaxEdgeX - size. "update the size of the edge"
 		
