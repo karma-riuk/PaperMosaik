@@ -1,0 +1,4 @@
+accessing
+currentMinYear
+
+	^ currentMinYear

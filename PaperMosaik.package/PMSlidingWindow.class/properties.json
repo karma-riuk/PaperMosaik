@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "LorenzoVarese 11/19/2023 11:52",
+	"super" : "Object",
+	"category" : "PaperMosaik-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"maximumSize",
+		"currentMinYear",
+		"currentMaxYear",
+		"yearsOfResearchInWindow"
+	],
+	"name" : "PMSlidingWindow",
+	"type" : "normal"
+}
