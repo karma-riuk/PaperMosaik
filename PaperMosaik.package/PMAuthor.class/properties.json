@@ -8,8 +8,6 @@
 		"Authors"
 	],
 	"instvars" : [
-		"yearToCoauthor",
-		"yearToPaper",
 		"authorId",
 		"authorName",
 		"yearsOfResearch"
