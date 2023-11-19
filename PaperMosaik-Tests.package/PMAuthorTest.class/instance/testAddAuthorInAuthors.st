@@ -12,3 +12,5 @@ testAddAuthorInAuthors
     "Test adding an existing author"
     existingAuthor := PMAuthor Authors at: newAuthorId ifAbsent: [nil].
     self assert: existingAuthor notNil.
+
+	 PMAuthor removeAuthorFromAuthors: newAuthorId.

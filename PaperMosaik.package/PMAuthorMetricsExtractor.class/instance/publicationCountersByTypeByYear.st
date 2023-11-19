@@ -1,4 +1,6 @@
 accessing
 publicationCountersByTypeByYear
-
-	^ publicationCountersByTypeByYear 
+	(publicationCountersByTypeByYear isEmpty)
+	ifTrue: 
+		[ self publicationCountersGeneration ] .
+	^(publicationCountersByTypeByYear)

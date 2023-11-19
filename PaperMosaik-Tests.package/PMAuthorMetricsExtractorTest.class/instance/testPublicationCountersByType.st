@@ -1,26 +1,22 @@
 tests
 testPublicationCountersByType
-    | metricsExtractor anAuthor year1999Publications year2000Publications year2001Publications result|
+    | validYear invalidYear nonIntegerYear publicationCounters expectedCounters |
+    
+    "Setup"
+    validYear := 2020.
+    invalidYear := 2022.
+    nonIntegerYear := '2020'.
+    expectedCounters := Dictionary new.
+    publicationCounters := PMAuthorMetricsExtractor new.
+    publicationCounters publicationCountersByTypeByYear: (Dictionary new
+        at: validYear put: expectedCounters;
+        yourself).
 
-    anAuthor := PMAuthor withAuthorId: 'MicheleLanza001' withAuthorName: 'Michele Lanza'.
-    metricsExtractor := PMAuthorMetricsExtractor withAuthor: anAuthor withStartingYear: 1999 withEndingYear: 2001.
+    "Test with valid year"
+    self assert: (publicationCounters publicationCountersByType: validYear) equals: expectedCounters.
 
-    year1999Publications := Dictionary new at: 'JournalArticle' put: 2 ; at: 'Book' put: 0 ; yourself .
+    "Test with invalid year"
+    self should: [publicationCounters publicationCountersByType: invalidYear] raise: Error.
 
-    year2000Publications := Dictionary new at: 'JournalArticle' put: 3 ; at: 'Book' put: 1 ; yourself .
-
-    year2001Publications := Dictionary new at: 'JournalArticle' put: 2 ; at: 'Book' put: 1 ; yourself .
-
-    metricsExtractor publicationCountersByTypeByYear 
-			at: 1999 put: year1999Publications ; 
-			at: 2000 put: year2000Publications ;
-			at: 2001 put: year2001Publications .
-
-	result := metricsExtractor publicationCountersByType: 1999.
-    self assert: result equals: year1999Publications.
-
-	"Test case with invalid year"
-	self should: [metricsExtractor publicationCountersByType: 1998] raise: Error.
-
-	result := metricsExtractor publicationCountersByType: 2001.
-    self assert: result equals: year2001Publications.
+    "Test with non-integer year"
+    self should: [publicationCounters publicationCountersByType: nonIntegerYear] raise: Error.

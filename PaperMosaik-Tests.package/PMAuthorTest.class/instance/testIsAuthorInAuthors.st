@@ -16,3 +16,5 @@ testIsAuthorInAuthors
 
     "Test with a non-existing author ID"
     self deny: (PMAuthor isAuthorInAuthors: newAuthorId).
+
+	 PMAuthor removeAuthorFromAuthors: existingAuthorId .
