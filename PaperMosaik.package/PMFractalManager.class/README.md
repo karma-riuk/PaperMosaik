@@ -11,7 +11,7 @@ object directly without the "withName" and there should be an internal method to
 the dictionary
 
 
-Example, for now
+Example for draw
 ```st
 |manager dict dict2 dict3|
 
@@ -25,6 +25,15 @@ manager addPerson: dict2 withName: 'Jhon'.
 manager addPerson: dict3 withName: 'Joe'.
 
 manager draw.
+```
+
+example for animate
+```st
+| autor MC FM|
+author := PMEntryPoint getMochAuthor.
+MC := PMEntryPoint getMochExtractorFromAuthor: autor.
+FM := PMFractalManager build.
+FM animate: author with: MC.
 ```
 
 
