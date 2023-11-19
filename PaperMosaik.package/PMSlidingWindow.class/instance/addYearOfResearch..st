@@ -1,13 +1,19 @@
 adding
 addYearOfResearch: aPMYearOfResearch
     | currentSize |
-	 "The length of the current window"
     currentSize := yearsOfResearchInWindow size.
 
-    currentSize >= maximumSize ifTrue: [ self removeOldestYearOfResearch. ].
+    currentSize >= maximumSize ifTrue: [self removeOldestYearOfResearch].
     
     yearsOfResearchInWindow addLast: aPMYearOfResearch.
-	 "TODO: change the current counter"
-	
+    
+    aPMYearOfResearch typeBasedPublicationCounts keysAndValuesDo: [:key :value |
+        (self typeCountersInWindow includesKey: key) ifTrue: [
+            self typeCountersInWindow at: key put: ((self typeCountersInWindow at: key) + value).
+        ] ifFalse: [
+            self typeCountersInWindow at: key put: value.
+        ].
+    ].
+    
     currentMaxYear := aPMYearOfResearch year.
-	 currentMinYear := aPMYearOfResearch year - currentSize .
+    currentMinYear := (yearsOfResearchInWindow first year) max: (currentMaxYear - maximumSize + 1).

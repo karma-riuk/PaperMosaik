@@ -9,7 +9,8 @@
 		"maximumSize",
 		"currentMinYear",
 		"currentMaxYear",
-		"yearsOfResearchInWindow"
+		"yearsOfResearchInWindow",
+		"typeCountersInWindow"
 	],
 	"name" : "PMSlidingWindow",
 	"type" : "normal"
