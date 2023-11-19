@@ -4,6 +4,9 @@ testPublicationCountersByType
 
     anAuthor := PMAuthor withAuthorId: 'MicheleLanza001' withAuthorName: 'Michele Lanza'.
     metricsExtractor := PMAuthorMetricsExtractor withAuthor: anAuthor withStartingYear: 1999 withEndingYear: 2001.
+	 
+	 "Avoid the call of publicationCountersByType method, and manually add mock dictionaries"
+	 metricsExtractor publicationCountersByTypeByYear: Dictionary new.
 
     year1999Publications := Dictionary new at: 'JournalArticle' put: 2 ; at: 'Book' put: 0 ; yourself .
 

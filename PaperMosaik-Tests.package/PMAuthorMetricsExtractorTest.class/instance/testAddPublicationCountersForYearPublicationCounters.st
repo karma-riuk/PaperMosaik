@@ -2,6 +2,8 @@ tests
 testAddPublicationCountersForYearPublicationCounters
  | anExtractor anYear aPublicationCounters |
 	 anExtractor := PMAuthorMetricsExtractor new .
+	 "Avoid the call of publicationCountersByType method, and manually add mock dictionaries"
+	 anExtractor publicationCountersByTypeByYear: Dictionary new.
 	 
 	 "Test valid add operation"
     anYear := 2020.
