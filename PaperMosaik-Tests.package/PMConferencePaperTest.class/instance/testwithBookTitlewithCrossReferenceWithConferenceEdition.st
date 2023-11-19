@@ -8,7 +8,7 @@ testwithBookTitlewithCrossReferenceWithConferenceEdition
 		aBookTitle := 'My Book' . 
 		aConferenceReference := 'Ref' .
 		aConferenceEdition := (PMConferenceEdition new) . 
-		conferencePaper := PMConferencePaper withBookTitle: 'My book' withCrossReference: 'Ref' withConferenceEdition:  (PMConferenceEdition new) .
+		conferencePaper := PMConferencePaper withBookTitle: 'My Book' withCrossReference: 'Ref' withConferenceEdition:  aConferenceEdition  .
 		
     	self assert: conferencePaper bookTitle equals: aBookTitle .
     	self assert: conferencePaper conferenceEdition equals: aConferenceEdition .
