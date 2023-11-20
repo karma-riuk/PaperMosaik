@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "<historical>",
 	"super" : "TestCase",
-	"category" : "PaperMosaik-Tests",
+	"category" : "PaperMosaik-Tests-DBInterface",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "PMJsonToPaperMosaikTest",
+	"name" : "PMDBInterfaceTest",
 	"type" : "normal"
 }
