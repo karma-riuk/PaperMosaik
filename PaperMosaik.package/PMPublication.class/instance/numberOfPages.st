@@ -1,4 +1,0 @@
-accessing
-numberOfPages
-
-	^ numberOfPages

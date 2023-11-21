@@ -1,1 +1,0 @@
-I represent a venue for journals and conferences
