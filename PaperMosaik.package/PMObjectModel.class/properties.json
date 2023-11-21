@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "LorenzoVarese 11/21/2023 23:48",
+	"super" : "PMObject",
+	"category" : "PaperMosaik-Abstract",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"id"
+	],
+	"name" : "PMObjectModel",
+	"type" : "normal"
+}

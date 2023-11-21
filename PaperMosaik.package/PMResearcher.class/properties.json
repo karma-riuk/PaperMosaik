@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "LorenzoVarese 11/21/2023 23:06",
-	"super" : "PMObject",
+	"super" : "PMObjectModel",
 	"category" : "PaperMosaik-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
@@ -8,7 +8,6 @@
 		"Researchers"
 	],
 	"instvars" : [
-		"id",
 		"publications"
 	],
 	"name" : "PMResearcher",
