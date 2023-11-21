@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "LorenzoZaniol 11/9/2023 13:06",
 	"super" : "Object",
-	"category" : "PaperMosaik",
+	"category" : "PaperMosaik-DBInterface",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
@@ -16,6 +16,6 @@
 		"user",
 		"pass"
 	],
-	"name" : "PMJsonToPaperMosaik",
+	"name" : "PMDBInterface",
 	"type" : "normal"
 }

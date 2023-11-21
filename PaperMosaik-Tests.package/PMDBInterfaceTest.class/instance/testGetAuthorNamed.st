@@ -1,10 +1,10 @@
 test
-testReadFromDBByAuthorName
+testGetAuthorNamed
 	|pm result name dicts|
-	pm := PMJsonToPaperMosaik new.
+	pm := PMDBInterface new.
 	pm setDBServer. "First set DB Type then do setup"
 	pm setup.
 	name:='Michele Lanza'.
-	result:=pm readFromDBByAuthorName: name. 
+	result:=pm getAuthorNamed: name. 
 	dicts:= pm dictionaries. 
 	self assert: result equals: dicts 
