@@ -2,19 +2,20 @@ parsing
 parse: inputPath
 
     | fileReference path |
-    path := '/Users/msstudiohd/Desktop/DB/mock_dblp_data.json'.
+    path := 'put_your_path/mock_dblp_data.json'.
     inputPath notNil ifTrue: [path := inputPath].
 
     fileReference := path asFileReference.
     fileReference exists ifFalse: [^self error: 'File not found.'].
 
+	 PMResearcher clearResearchers . 
     fileReference readStreamDo: [:readStream | 
         (NeoJSONReader on: readStream) next collect: [:eachItem | 
             | publication authors |
 			     
 				publication := PMPublication newWithId: ((eachItem at: 'key_parts' ifAbsent: [nil]) joinUsing: '') .
 										publication 
-										type: (eachItem at: 'key_parts' ifAbsent: [nil] ) first ;
+										type: (eachItem at: 'key_parts') first ,'-' ,  (eachItem at: 'dblp_tag') ;
 										title: (eachItem at: 'title') ;
 										year: (eachItem at: 'year') asInteger .
 			
@@ -23,7 +24,7 @@ parse: inputPath
                 authorArray collect: [:eachAuthorId | 
                     					| aResearcher |
 											(PMResearcher researchersIncludesResearcherWithId: eachAuthorId)
-												ifTrue: [ aResearcher := ((PMResearcher Researchers) at: eachAuthorId) ]
+												ifTrue: [ aResearcher := PMResearcher Researchers at: eachAuthorId ]
 												ifFalse: [ aResearcher := PMResearcher newWithId: eachAuthorId ] .
 											aResearcher								
 									] .
