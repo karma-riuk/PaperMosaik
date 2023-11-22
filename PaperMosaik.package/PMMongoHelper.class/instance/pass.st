@@ -1,4 +1,0 @@
-accessing
-pass
-
-	^ pass
