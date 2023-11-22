@@ -1,1 +1,0 @@
-I represent a specific publication: an artile inside a journal

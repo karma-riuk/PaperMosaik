@@ -1,1 +1,1 @@
-I represent everithing that publications have in common
+I represent a publication.

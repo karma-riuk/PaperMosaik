@@ -1,0 +1,1 @@
+I represent an object in the scope of PaperMosaik

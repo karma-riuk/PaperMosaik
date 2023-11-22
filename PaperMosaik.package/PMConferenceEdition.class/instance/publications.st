@@ -1,4 +1,0 @@
-accessing
-publications
-
-	^ publications

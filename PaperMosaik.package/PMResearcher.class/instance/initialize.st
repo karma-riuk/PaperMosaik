@@ -1,4 +1,4 @@
 initialization
 initialize 
 	super initialize.
-	authors := Set new .
+	publicationsByYear := Dictionary new .

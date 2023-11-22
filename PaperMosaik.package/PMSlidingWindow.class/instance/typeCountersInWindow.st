@@ -1,4 +1,0 @@
-accessing
-typeCountersInWindow
-
-	^ typeCountersInWindow

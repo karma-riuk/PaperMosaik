@@ -1,0 +1,1 @@
+I refer to an Object of the model of PaperMosaik. I handle common logic for the model.

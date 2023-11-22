@@ -1,16 +1,15 @@
 {
-	"commentStamp" : "LorenzoVarese 11/21/2023 23:07",
+	"commentStamp" : "LorenzoVarese 11/21/2023 23:06",
 	"super" : "PMObjectModel",
 	"category" : "PaperMosaik-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [ ],
-	"instvars" : [
-		"title",
-		"year",
-		"type",
-		"authors"
+	"classvars" : [
+		"Researchers"
 	],
-	"name" : "PMPublication",
+	"instvars" : [
+		"publicationsByYear"
+	],
+	"name" : "PMResearcher",
 	"type" : "normal"
 }
