@@ -13,7 +13,7 @@ testPublicationsCategorizedByTypeFromYearToYear
     publication3 year: 2021.
 
     "Assign publications to researcher"
-    researcher publications: (Dictionary new
+    researcher publicationsByYear: (Dictionary new
         at: 2020 put: (OrderedCollection with: publication1 with: publication2);
         at: 2021 put: (OrderedCollection with: publication3);
         yourself).

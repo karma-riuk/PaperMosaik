@@ -4,9 +4,9 @@ allCollaboratorsFromYear: startingYear ToYear: endingYear
 	collaborators := Set new .
 		
 	startingYear to: endingYear do: [ :year |
-												(publications includesKey: year)
+												(publicationsByYear includesKey: year)
 												ifTrue: [
-													(publications at: year) do: [ :publication |
+													(publicationsByYear at: year) do: [ :publication |
 																							publication authors do: [ :collaborator |
 																																(collaborators includes: collaborator)
 																																	ifFalse: [ collaborators add: collaborator ]

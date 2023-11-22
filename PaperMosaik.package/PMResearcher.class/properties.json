@@ -8,7 +8,7 @@
 		"Researchers"
 	],
 	"instvars" : [
-		"publications"
+		"publicationsByYear"
 	],
 	"name" : "PMResearcher",
 	"type" : "normal"

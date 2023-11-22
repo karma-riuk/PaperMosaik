@@ -10,7 +10,7 @@ testAllPublications
     publication3 := PMPublication newWithId: 'pubId003'.
 
     "Assign publications to researcher"
-    researcher publications: (Dictionary new
+    researcher publicationsByYear: (Dictionary new
         at: 2020 put: (OrderedCollection with: publication1);
         at: 2022 put: (OrderedCollection with: publication2 with: publication3);
         yourself).
@@ -19,7 +19,7 @@ testAllPublications
     expectedPublications := OrderedCollection with: publication1 with: publication2 with: publication3.
 
     "Call the method"
-    actualPublications := researcher allPublications.
+    actualPublications := researcher publications.
 
     "Assert that the actual publications match the expected ones"
     self assert: actualPublications equals: expectedPublications.
