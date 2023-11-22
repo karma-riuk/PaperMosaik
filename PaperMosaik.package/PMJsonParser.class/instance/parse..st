@@ -1,13 +1,14 @@
 parsing
 parse: inputPath
 
-    | fileReference path |
-    path := 'put_your_path/mock_dblp_data.json'.
+    | fileReference path workingDirectory |
+    workingDirectory := FileLocator workingDirectory.
+    path :=  workingDirectory fullName , '/pharo-local/iceberg/2023/papermosaik/MockData/mock_dblp_data.json' .
+	 Transcript show: path; cr. 
     inputPath notNil ifTrue: [path := inputPath].
 
     fileReference := path asFileReference.
     fileReference exists ifFalse: [^self error: 'File not found.'].
-
 	 PMResearcher clearResearchers . 
     fileReference readStreamDo: [:readStream | 
         (NeoJSONReader on: readStream) next collect: [:eachItem | 
