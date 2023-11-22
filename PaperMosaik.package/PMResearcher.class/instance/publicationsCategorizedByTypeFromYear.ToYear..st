@@ -6,7 +6,7 @@ publicationsCategorizedByTypeFromYear: startingYear ToYear: endingYear
 												(publications at: year) do: [ :publication |
 																									(publicationsByType includesKey: publication type)
 																										ifFalse: [ publicationsByType at: publication type put: OrderedCollection new ] .
-																									(publicationsByType at: publicationsByType) add: publication 
+																									(publicationsByType at: publication type) add: publication 
 																						] 
 												] .
 	^(publicationsByType)
