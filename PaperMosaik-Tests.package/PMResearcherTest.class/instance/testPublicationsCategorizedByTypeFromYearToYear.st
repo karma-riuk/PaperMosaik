@@ -10,12 +10,12 @@ testPublicationsCategorizedByTypeFromYearToYear
     publication2 := (PMPublication newWithId: 'pubId002') type: 'Conference'.
     publication2 year: 2020.
     publication3 := (PMPublication newWithId: 'pubId003') type: 'Journal'.
-    publication3 year: 2021.
+    publication3 year: 2022.
 
     "Assign publications to researcher"
     researcher publicationsByYear: (Dictionary new
         at: 2020 put: (OrderedCollection with: publication1 with: publication2);
-        at: 2021 put: (OrderedCollection with: publication3);
+        at: 2022 put: (OrderedCollection with: publication3);
         yourself).
 
     "Define expected categorized publications"
@@ -24,7 +24,7 @@ testPublicationsCategorizedByTypeFromYearToYear
     expectedCategorizedPublications at: 'Conference' put: (OrderedCollection with: publication2).
 
     "Call the method"
-    actualCategorizedPublications := researcher publicationsCategorizedByTypeFromYear: 2020 ToYear: 2021.
+    actualCategorizedPublications := researcher publicationsCategorizedByTypeFromYear: 2020 ToYear: 2022.
 
     "Assert that the actual categorized publications match the expected ones"
     self assert: actualCategorizedPublications equals: expectedCategorizedPublications.
