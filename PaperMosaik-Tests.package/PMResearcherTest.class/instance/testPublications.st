@@ -1,5 +1,5 @@
 tests
-testAllPublications
+testPublications
     | researcher expectedPublications actualPublications publication1 publication2 publication3 |
 
     researcher := PMResearcher newWithId: 'testId001'.
