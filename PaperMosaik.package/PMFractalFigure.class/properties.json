@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "ArnaudFauconnet 11/22/2023 22:46",
+	"super" : "RSComposite",
+	"category" : "PaperMosaik-Fractal",
+	"classinstvars" : [
+		"palette"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"palette"
+	],
+	"name" : "PMFractalFigure",
+	"type" : "normal"
+}

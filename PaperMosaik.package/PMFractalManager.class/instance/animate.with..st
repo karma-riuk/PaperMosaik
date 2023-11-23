@@ -8,7 +8,7 @@ animate: author with: metricsExtractor
     yearLabel := RSLabel new text: yearToDraw .
     canvas add: yearLabel.
     
-    figure := PMFractal
+    figure := PMFractalFigure
                   draw:
                   (metricsExtractor publicationCountersByType: yearToDraw)
                   authorName: author authorName
@@ -29,7 +29,7 @@ animate: author with: metricsExtractor
             yearToDraw >= metricsExtractor endingYear ifTrue: [
                         yearToDraw := startYearToDraw.
                     ].
-            figure := PMFractal
+            figure := PMFractalFigure
                 draw: (metricsExtractor publicationCountersByType: yearToDraw)
                 authorName: author authorName
                 canvas: canvas.
