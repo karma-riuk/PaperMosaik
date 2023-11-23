@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "ArnaudFauconnet 11/23/2023 14:25",
+	"super" : "RSCanvas",
+	"category" : "PaperMosaik-Fractal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"centralResearcher",
+		"radialResearchers"
+	],
+	"name" : "PMScene",
+	"type" : "normal"
+}
