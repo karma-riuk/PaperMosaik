@@ -3,6 +3,8 @@ publicationsCategorizedByCollaboratorFromYear: startingYear ToYear: endingYear
 	|publicationsByCollaborator|
 	publicationsByCollaborator := Dictionary new.
 	startingYear to: endingYear do: [ :year |
+		(publicationsByYear includesKey: year)
+													ifTrue: [
 												(publicationsByYear at: year) do: [ :publication |
 																							publication authors do: [ :collaborator |
 																																(publicationsByCollaborator includesKey: collaborator)
@@ -10,6 +12,7 @@ publicationsCategorizedByCollaboratorFromYear: startingYear ToYear: endingYear
 																																(publicationsByCollaborator at: collaborator) add: publication 
 																																 ] .
 																						] 
-												] .
+												] 
+											].
 	publicationsByCollaborator removeKey: self ifAbsent: [  ] .
 	^(publicationsByCollaborator)
