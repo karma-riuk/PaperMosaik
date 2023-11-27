@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "Anonymous 11/26/2023 17:05",
+	"super" : "PMObjectModel",
+	"category" : "PaperMosaik",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"VenueEditions"
+	],
+	"instvars" : [
+		"venueName",
+		"venueEdition"
+	],
+	"name" : "PMVenueEdition",
+	"type" : "normal"
+}
