@@ -1,6 +1,6 @@
 tests
 testJsonParserSingle
-    | parser mockJSON article fileReference stream pubblication pubblication2 |
+    | parser mockJSON article fileReference stream pubblication pubblication2 venueEdition|
 
     "Mock JSON data for a journal article"
     mockJSON := '[
@@ -18,6 +18,7 @@ testJsonParserSingle
         "title": "Data Cleansing: A Prelude to Knowledge Discovery.",
         "year": 2010
     					}
+		  "v_edition": "wg91"
 
                 ]'.
 
@@ -40,6 +41,10 @@ testJsonParserSingle
 	pubblication2 := (PMResearcher Researchers at: 'Jonathan I. Maletic') publications first .
 	self assert: pubblication equals: pubblication2 .
 	
+	self assert: (PMVenueEdition venueEditionsIncludesVenueEditionWithId: 'dmkdh-wg91') .
+	venueEdition := (PMVenueEdition venueEditionsIncludesVenueEditionWithId: 'dmkdh-wg91') .
+	self assert: venueEdition venueName equals: 'dmkdh' .
+	self assert: venueEdition venueEdition equals: 'wg91' .
 	
 	
 	
