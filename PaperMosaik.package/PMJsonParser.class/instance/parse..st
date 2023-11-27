@@ -12,7 +12,12 @@ parse: inputPath
 	 PMResearcher clearResearchers . 
     fileReference readStreamDo: [:readStream | 
         (NeoJSONReader on: readStream) next collect: [:eachItem | 
-            | publication authors |
+            | publication authors venueEdition|
+
+				venueEdition := PMVenueEdition newWithId: ((eachItem at: 'key_parts' second), '-', (eachItem at: 'v_edition')) .
+										venueEdition
+										venueName: (eachItem at: 'key_parts' second) ;
+										venueEdition: (eachItem at: ('v_edition')) .
 			     
 				publication := PMPublication newWithId: ((eachItem at: 'key_parts' ifAbsent: [nil]) joinUsing: '') .
 										publication 
