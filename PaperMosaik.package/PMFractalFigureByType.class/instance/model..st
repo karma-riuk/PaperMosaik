@@ -1,6 +1,6 @@
 accessing
 model: aResearcher
 	model := aResearcher.
-	self addAllParts: (aResearcher publicationsCategorizedByTypeFromYear: 2015 ToYear: 2018).
+	self addAllParts: (aResearcher publicationsCategorizedByType).
 	self addName: aResearcher id.
 	
