@@ -1,15 +1,18 @@
 accessing
 publicationsCategorizedByTypeFromYear: startingYear ToYear: endingYear
-	|publicationsByType|
-	publicationsByType := Dictionary new.
+	|publicationsByTypeAsString publicationsByTypeAsLabeledObject|
+	publicationsByTypeAsString := Dictionary new.
 	startingYear to: endingYear do: [ :year |
 												(publicationsByYear includesKey: year)
 													ifTrue: [
 														(publicationsByYear at: year) do: [ :publication |
-																									(publicationsByType includesKey: publication type)
-																										ifFalse: [ publicationsByType at: publication type put: OrderedCollection new ] .
-																									(publicationsByType at: publication type) add: publication 
+																									(publicationsByTypeAsString includesKey: publication type)
+																										ifFalse: [ publicationsByTypeAsString at: publication type put: OrderedCollection new ] .
+																									(publicationsByTypeAsString at: publication type) add: publication 
 																						]
 														]
-												] .
-	^(publicationsByType)
+												].
+	publicationsByTypeAsLabeledObject := Dictionary new.
+	publicationsByTypeAsString keysAndValuesDo: [ :key :value | publicationsByTypeAsLabeledObject at: (PMLabeledObject new label: key; object: key) put: value ].
+	
+	^(publicationsByTypeAsLabeledObject)
