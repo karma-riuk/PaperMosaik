@@ -1,18 +1,23 @@
 accessing
 publicationsCategorizedByCollaboratorFromYear: startingYear ToYear: endingYear
-	|publicationsByCollaborator|
-	publicationsByCollaborator := Dictionary new.
+	|publicationsByCollaboratorAsObject publicationsByCollaboratorAsLabeledObject|
+	publicationsByCollaboratorAsObject := Dictionary new.
 	startingYear to: endingYear do: [ :year |
 		(publicationsByYear includesKey: year)
 													ifTrue: [
 												(publicationsByYear at: year) do: [ :publication |
 																							publication authors do: [ :collaborator |
-																																(publicationsByCollaborator includesKey: collaborator)
-																																	ifFalse: [ publicationsByCollaborator at: collaborator put: Set new ] .
-																																(publicationsByCollaborator at: collaborator) add: publication 
+																								collaborator id ~= self id ifTrue: [ 
+																									 
+																																(publicationsByCollaboratorAsObject includesKey: collaborator)
+																																	ifFalse: [ publicationsByCollaboratorAsObject at: collaborator put: Set new ] .
+																																(publicationsByCollaboratorAsObject at: collaborator) add: publication 
 																																 ] .
+																															].
 																						] 
 												] 
 											].
-	publicationsByCollaborator removeKey: self ifAbsent: [  ] .
-	^(publicationsByCollaborator)
+										
+	publicationsByCollaboratorAsLabeledObject := Dictionary new.
+	publicationsByCollaboratorAsObject keysAndValuesDo: [ :key :value | publicationsByCollaboratorAsLabeledObject at: (PMLabeledObject new label: key id; object: key) put: value ].
+	^(publicationsByCollaboratorAsLabeledObject)

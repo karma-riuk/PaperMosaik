@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "ArnaudFauconnet 11/29/2023 09:51",
+	"super" : "PMObject",
+	"category" : "PaperMosaik-Abstract",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"label",
+		"object"
+	],
+	"name" : "PMLabeledObject",
+	"type" : "normal"
+}
