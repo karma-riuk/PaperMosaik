@@ -14,10 +14,15 @@ add: aFractalFigure
 		researcher:= shape model.
 		((researcher allCollaborators) includes: (aFractalFigure model)) ifTrue: [ 
 			lines := RSEdgeBuilder line
+			color: (Color r: 0.68 g: 0.83  b:0.91);
 			width: lineThickness ;
 			canvas: self;
 			connectFrom: (aFractalFigure model)  to: (shape model).
-			lines do: [ :l | l attachPoint: (RSBorderAttachPoint new) ].
+			lines do: [ :l | 
+				l attachPoint: (RSBorderAttachPoint new) .
+				l pushBack.
+				l capRound  .
+				].
 			 ].
 		].
 	
