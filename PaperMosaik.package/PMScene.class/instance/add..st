@@ -8,7 +8,7 @@ add: aFractalFigure
 		].
 	
 	
-	lineThickness := 5.
+	lineThickness := 2.
 	
 	fractalFigures  do: [ :shape|  |researcher lines|
 		researcher:= shape model.
