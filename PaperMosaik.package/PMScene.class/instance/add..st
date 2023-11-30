@@ -1,6 +1,9 @@
 adding
 add: aFractalFigure
-	|fractalFigures lineThickness|
+	|fractalFigures lineThickness a|
+	aFractalFigure class = RSLine ifTrue: [ 
+		a := 1.
+		 ].
 	super add: aFractalFigure.
 	
 	fractalFigures := (self shapes) select: [: el |
@@ -25,7 +28,9 @@ add: aFractalFigure
 				].
 			 ].
 		].
-	
+	 
 	centralResearcher ifNil: [ centralResearcher := aFractalFigure ] 
-						   ifNotNil: [ radialResearchers add: aFractalFigure ].
+						 	ifNotNil: [ aFractalFigure class = PMFractalFigure ifTrue: [ 
+										 radialResearchers add: aFractalFigure ].
+									].
 	

@@ -1,5 +1,5 @@
 accessing
-animateFrom: startYear to: endYear deley: time
+animateFrom: startYear to: endYear delay: time
 | currentYear labelText label|
 	currentYear := startYear.
 	labelText := (currentYear asString).
@@ -7,7 +7,7 @@ animateFrom: startYear to: endYear deley: time
 	super add: label.
 	centralResearcher fromYear: startYear toYear: currentYear.
 	radialResearchers do: [ :researcher| 
-				researcher fromYear: startYear  toYear: endYear .
+				researcher fromYear: startYear  toYear: currentYear  .
 			].
 
 	self newAnimation repeat
@@ -16,7 +16,7 @@ animateFrom: startYear to: endYear deley: time
 			
 			centralResearcher fromYear: startYear toYear: currentYear.
 			radialResearchers do: [ :researcher| 
-				researcher fromYear: startYear  toYear: endYear .
+				researcher fromYear: startYear  toYear: currentYear  .
 			].
 			"update current year"
 			(currentYear >= endYear ) ifTrue: [ 
@@ -28,8 +28,6 @@ animateFrom: startYear to: endYear deley: time
 				label text: (startYear asString , ' - ', currentYear asString ).
 			].
 	
-"	centralResearcher translateTopLeftTo: (self extent x / 2) @ (self extent y / 2)."
-	RSLocation new center; stick: centralResearcher on: radialResearchers.
 	
 			self @ RSCanvasController.
 			self zoomToFit .
