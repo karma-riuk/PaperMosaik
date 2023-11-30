@@ -30,7 +30,7 @@ add: aFractalFigure
 		].
 	 
 	centralResearcher ifNil: [ centralResearcher := aFractalFigure ] 
-						 	ifNotNil: [ aFractalFigure class = PMFractalFigure ifTrue: [ 
-										 radialResearchers add: aFractalFigure ].
+						 	ifNotNil: [  
+										 radialResearchers add: aFractalFigure.
 									].
 	

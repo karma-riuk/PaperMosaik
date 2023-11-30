@@ -5,19 +5,15 @@ animateFrom: startYear to: endYear delay: time
 	labelText := (currentYear asString).
 	label := RSLabel new text: (currentYear asString) .
 	super add: label.
-	centralResearcher fromYear: startYear toYear: currentYear.
-	radialResearchers do: [ :researcher| 
-				researcher fromYear: startYear  toYear: currentYear  .
-			].
+	
+	self updateHelperFrom: startYear  to: currentYear .
+	self layoutHelper .
 
 	self newAnimation repeat
 		duration: time seconds;
 		when: RSAnimationLoopEvent do: [ :evt|
 			
-			centralResearcher fromYear: startYear toYear: currentYear.
-			radialResearchers do: [ :researcher| 
-				researcher fromYear: startYear  toYear: currentYear  .
-			].
+			self updateHelperFrom: startYear to: currentYear .
 			"update current year"
 			(currentYear >= endYear ) ifTrue: [ 
 				currentYear := startYear.
@@ -28,7 +24,8 @@ animateFrom: startYear to: endYear delay: time
 				label text: (startYear asString , ' - ', currentYear asString ).
 			].
 	
-	
+			
 			self @ RSCanvasController.
-			self zoomToFit .
+			
+			
 		]
