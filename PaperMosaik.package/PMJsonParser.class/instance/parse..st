@@ -13,17 +13,14 @@ parse: inputPath
     fileReference readStreamDo: [:readStream | 
         (NeoJSONReader on: readStream) next collect: [:eachItem | 
             | publication authors venueEdition|
-
-				venueEdition := PMVenueEdition newWithId: ((eachItem at: 'key_parts' second), '-', (eachItem at: 'v_edition')) .
-										venueEdition
-										venueName: (eachItem at: 'key_parts' second) ;
-										venueEdition: (eachItem at: ('v_edition')) .
+				venueEdition := PMVenueEdition newWithId: (((eachItem at: 'key_parts') second), '-', (eachItem at: 'v_edition')) .
+				venueEdition venueName: ((eachItem at: 'key_parts') second) ;
+					venueEdition: (eachItem at: ('v_edition')) .
 			     
 				publication := PMPublication newWithId: ((eachItem at: 'key_parts' ifAbsent: [nil]) joinUsing: '') .
-										publication 
-										type: (eachItem at: 'key_parts') first ,'-' ,  (eachItem at: 'dblp_tag') ;
-										title: (eachItem at: 'title') ;
-										year: (eachItem at: 'year') asInteger .
+				publication type: (eachItem at: 'key_parts') first ,'-' ,  (eachItem at: 'dblp_tag') ;
+					title: (eachItem at: 'title') ;
+					year: (eachItem at: 'year') asInteger .
 			
             authors := ((eachItem at: 'authors') 
 									ifNotNil: [:authorArray | 

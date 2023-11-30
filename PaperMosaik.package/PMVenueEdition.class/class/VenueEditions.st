@@ -1,4 +1,4 @@
 as yet unclassified
-VenueEditions 
-   (VenueEditions) ifEmpty: [ PMJsonParser new parse: nil. ]. 
+VenueEditions
+   VenueEditions ifNil: [ VenueEditions := Dictionary new]. 
 	^VenueEditions

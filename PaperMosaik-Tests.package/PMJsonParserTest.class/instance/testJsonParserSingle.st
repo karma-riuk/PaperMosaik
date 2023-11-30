@@ -16,10 +16,9 @@ testJsonParserSingle
             "Andrian Marcus"
         ],
         "title": "Data Cleansing: A Prelude to Knowledge Discovery.",
-        "year": 2010
-    					}
+        "year": 2010,
 		  "v_edition": "wg91"
-
+						}
                 ]'.
 
 	fileReference := 'mockData.json' asFileReference.
@@ -42,7 +41,7 @@ testJsonParserSingle
 	self assert: pubblication equals: pubblication2 .
 	
 	self assert: (PMVenueEdition venueEditionsIncludesVenueEditionWithId: 'dmkdh-wg91') .
-	venueEdition := (PMVenueEdition venueEditionsIncludesVenueEditionWithId: 'dmkdh-wg91') .
+	venueEdition := (PMVenueEdition withId: 'dmkdh-wg91') .
 	self assert: venueEdition venueName equals: 'dmkdh' .
 	self assert: venueEdition venueEdition equals: 'wg91' .
 	
