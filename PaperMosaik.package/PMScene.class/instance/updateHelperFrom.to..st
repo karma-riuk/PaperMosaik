@@ -1,6 +1,6 @@
 helper methods
-updateHelperFrom: startYear to: currentYear
-	centralFigure fromYear: startYear toYear: currentYear.
-	radialFigures do: [ :researcher| 
-					researcher fromYear: startYear  toYear: currentYear.
+updateHelperFrom: from to: to
+	centralFigure fromYear: from toYear: to.
+	radialFigures do: [ :figure| 
+					figure fromYear: from  toYear: to.
 			].
