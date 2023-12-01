@@ -6,8 +6,9 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"centralResearcher",
-		"radialResearchers"
+		"figureType",
+		"centralFigure",
+		"radialFigures"
 	],
 	"name" : "PMScene",
 	"type" : "normal"
