@@ -1,8 +1,6 @@
-accessing
+helper methods
 updateHelperFrom: startYear to: currentYear
-	centralResearcher fromYear: startYear toYear: currentYear.
-	radialResearchers do: [ :researcher| 
-				researcher class = PMFractalFigure ifTrue: [ 
-					researcher fromYear: startYear  toYear: currentYear  .
-					 ].
+	centralFigure fromYear: startYear toYear: currentYear.
+	radialFigures do: [ :researcher| 
+					researcher fromYear: startYear  toYear: currentYear.
 			].
