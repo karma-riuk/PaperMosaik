@@ -11,6 +11,8 @@ addAllParts: keyToPublication
 	total := yearToNumOfPapers
 		         inject: 0
 		         into: [ :sum :each | sum + each value ]. "sum the total values"
+	numberOfPapersToShow := total.
+
 
 	maxSize := total. "Size is proportional of the total value"
 	maxArea := maxSize * maxSize.
