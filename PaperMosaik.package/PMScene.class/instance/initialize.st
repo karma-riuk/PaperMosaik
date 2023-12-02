@@ -1,4 +1,6 @@
-adding
+initialization
 initialize
 	super initialize.
-	radialResearchers := RSGroup new.
+	self @ RSCanvasController.
+	figureType := PMFractalFigureByType.
+	window := 5.

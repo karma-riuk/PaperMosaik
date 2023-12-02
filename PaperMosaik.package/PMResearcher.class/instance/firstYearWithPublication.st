@@ -1,3 +1,3 @@
 accessing
 firstYearWithPublication
-	^(publicationsByYear keys first)
+	^(publicationsByYear keys sort first)

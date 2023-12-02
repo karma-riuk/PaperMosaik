@@ -1,22 +1,27 @@
 I represent a scene on which you can put fractal figures
 
 ### Example
+To visualize a researcher with all his collaborators accross his entire career without animations:
 
 ```st
 PMResearcher Researchers.
 
 lanza := PMResearcher Researchers at: 'Michele Lanza'.
-ducasse := PMResearcher Researchers at: 'Stephane Ducasse'.
-dambros := PMResearcher Researchers at: 'Marco D''Ambros'.
 
+scene := PMScene new model: lanza.
 
-canvas := PMScene new.
+scene open.
+```
 
-canvas add: (PMFractalFigureByYears new model: lanza).
-canvas add: (PMFractalFigureByYears new model: ducasse).
-canvas add: (PMFractalFigureByYears new model: dambros).
+To animate a researcher and his collaborators from 2000 to 2020 with a 5 year window:
 
-canvas @ RSCanvasController.
-canvas zoomToFit.
-canvas open.
+```st
+PMResearcher Researchers.
+
+lanza := PMResearcher Researchers at: 'Michele Lanza'.
+
+scene := PMScene new model: lanza; startYear: 2000; endYear: 2020; window: 5.
+
+scene open.
+scene animate.
 ```
