@@ -7,5 +7,4 @@ updateHelperFrom: from to: to
 			]."
 	radialFigures do: [ :figure | self removeShape: figure ].
 	radialFigures := ((centralFigure model) allCollaboratorsFromYear: from ToYear: to) collect: [ :collab | figureType new model: collab ] into: RSGroup new.
-	radialFigures := radialFigures reject: [ :figure | figure numberOfPapersToShow = 0 ].
 	self addAll: radialFigures.

@@ -8,8 +8,7 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"palette",
-		"numberOfPapersToShow"
+		"palette"
 	],
 	"name" : "PMFractalFigure",
 	"type" : "normal"
