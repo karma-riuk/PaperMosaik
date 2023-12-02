@@ -6,6 +6,9 @@ connectFigures
 	collaborators := centralFigure model allCollaborators.
 	lineThickness := 2.
 	
+	" Remove previous connections from the canvas. The following line does NOT work, but it's a start"
+"	self shapes do: [ :shape | shape class = RSLine ifTrue: [ self removeShape: shape ] ]."
+	
 	collaborators do: [ :collab1 |
 		collaborators do: [ :collab2 |
 			(alreadyConnectedCollaborators includes: collab2) ifFalse: [ 
@@ -24,4 +27,5 @@ connectFigures
 					 ].
 				 ].
 			 ].
+		
 		 ].
