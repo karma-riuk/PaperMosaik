@@ -5,8 +5,9 @@ animate
 	currentStartYear := startYear.
 	currentEndYear := currentStartYear + 1.
 	labelText := currentEndYear asString.
-	label := RSLabel new text: currentStartYear asString , ' - ' , currentEndYear asString.
-	self add: label.
+	label := RSLabel new text: currentStartYear asString , ' - ' , currentEndYear asString; fontSize: 30.
+	self addFixedShape: label.
+	label translateBy: 100 @ 20.
 
 	self updateHelperFrom: currentStartYear to: currentEndYear.
 	self layoutHelper.
