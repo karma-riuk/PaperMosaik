@@ -6,7 +6,7 @@ connectFigures
 	connections removeAll.
 
 	alreadyConnectedFigures := Set new.
-	lineThickness := 2.
+	lineThickness := 5.
 
 	radialFigures do: [ :fig1 | 
 		radialFigures do: [ :fig2 | 
