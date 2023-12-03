@@ -11,7 +11,8 @@
 		"radialFigures",
 		"startYear",
 		"endYear",
-		"window"
+		"window",
+		"connections"
 	],
 	"name" : "PMScene",
 	"type" : "normal"
