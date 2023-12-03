@@ -6,17 +6,8 @@ I represent a fractal figure that displays the number of papers written by a res
 PMResearcher Researchers.
 
 lanza := PMResearcher Researchers at: 'Michele Lanza'.
-ducasse := PMResearcher Researchers at: 'Stephane Ducasse'.
-dambros := PMResearcher Researchers at: 'Marco D''Ambros'.
 
+scene := PMScene new figureType: PMFractalFigureByYears; model: lanza.
 
-canvas := PMScene new.
-
-canvas add: (PMFractalFigureByYears new model: lanza).
-canvas add: (PMFractalFigureByYears new model: ducasse).
-canvas add: (PMFractalFigureByYears new model: dambros).
-
-canvas @ RSCanvasController.
-canvas zoomToFit.
-canvas open.
+scene open.
 ```
