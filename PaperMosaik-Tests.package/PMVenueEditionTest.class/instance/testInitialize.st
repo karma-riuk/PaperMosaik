@@ -7,7 +7,7 @@ testInitialize
 		aVenueName := 'VenName' .
 		aVenueEdition := 'ab12' . 
 
-    venueEdition := (PMVenueEdition newWithId: anId) venueName: aVenueName ; venueEdition: aVenueEdition .
+    venueEdition := (PMVenue newWithId: anId) venueName: aVenueName ; venueEdition: aVenueEdition .
 
     self assert: venueEdition id equals: anId .
     self assert: venueEdition venueName equals: aVenueName .

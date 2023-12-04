@@ -40,8 +40,8 @@ testJsonParserSingle
 	pubblication2 := (PMResearcher Researchers at: 'Jonathan I. Maletic') publications first .
 	self assert: pubblication equals: pubblication2 .
 	
-	self assert: (PMVenueEdition venueEditionsIncludesVenueEditionWithId: 'dmkdh-wg91') .
-	venueEdition := (PMVenueEdition withId: 'dmkdh-wg91') .
+	self assert: (PMVenue venuesIncludesVenueWithId: 'dmkdh-wg91') .
+	venueEdition := (PMVenue withId: 'dmkdh-wg91') .
 	self assert: venueEdition venueName equals: 'dmkdh' .
 	self assert: venueEdition venueEdition equals: 'wg91' .
 	

@@ -1,16 +1,18 @@
 {
 	"commentStamp" : "Anonymous 11/26/2023 17:05",
 	"super" : "PMObjectModel",
-	"category" : "PaperMosaik",
+	"category" : "PaperMosaik-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [
-		"VenueEditions"
+		"Venues"
 	],
 	"instvars" : [
-		"venueName",
-		"venueEdition"
+		"name",
+		"field",
+		"type",
+		"publicationsByYear"
 	],
-	"name" : "PMVenueEdition",
+	"name" : "PMVenue",
 	"type" : "normal"
 }
