@@ -1,6 +1,6 @@
 helper methods
 layoutHelper
-	| radius maxWidth layout |
+	| radius maxWidth layout fontSize |
 	
 	maxWidth := 0.
 	radialFigures  do: [ :each | maxWidth < each width ifTrue: [ maxWidth = each width ] ].
@@ -17,3 +17,6 @@ layoutHelper
 	RSLocation new center; stick: centralFigure on: radialFigures.
 	
 	self zoomToFit.
+	fontSize := self visibleRectangle width / 50.
+	centralFigure fontSize: fontSize.
+	radialFigures do: [ :figure | figure fontSize: fontSize ]
