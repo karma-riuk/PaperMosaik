@@ -40,7 +40,7 @@ addAllParts: keyToPublication
 			               (palette at: iteration % palette size + 1).
 		fractalPart model: (keyToPublication at: currentKey).
 		fractalPart translateTopLeftTo: currentOrigin.
-		fractalPart @ (RSPopup new text: currentKey).
+		fractalPart @ (RSPopup new text: currentKey label).
 
 		currentOrigin := iteration % 2 = 1
 			                 ifTrue: [ currentOrigin + (currentWidth @ 0) ]

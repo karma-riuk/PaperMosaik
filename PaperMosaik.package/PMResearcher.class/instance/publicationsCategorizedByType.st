@@ -1,0 +1,3 @@
+accessing
+publicationsCategorizedByType
+	^ self publicationsCategorizedByTypeFromYear: self firstYearWithPublication  ToYear: self lastYearWithPublication.

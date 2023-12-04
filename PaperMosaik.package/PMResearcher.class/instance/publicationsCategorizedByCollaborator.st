@@ -1,0 +1,3 @@
+accessing
+publicationsCategorizedByCollaborator
+	^ self publicationsCategorizedByCollaboratorFromYear: self firstYearWithPublication ToYear: self lastYearWithPublication 

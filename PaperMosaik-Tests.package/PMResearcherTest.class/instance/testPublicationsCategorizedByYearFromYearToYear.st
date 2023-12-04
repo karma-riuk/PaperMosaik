@@ -1,5 +1,5 @@
 tests
-testPublicationsCategorizedByTypeFromYearToYear
+testPublicationsCategorizedByYearFromYearToYear
     | researcher expectedCategorizedPublications actualCategorizedPublications publication1 publication2 publication3 publication4 |
 
     researcher := PMResearcher newWithId: 'testId001'.
@@ -24,14 +24,14 @@ testPublicationsCategorizedByTypeFromYearToYear
 
     "Define expected categorized publications"
     expectedCategorizedPublications := Dictionary new.
-    expectedCategorizedPublications at: (PMLabeledObject new object: 'Journal'; label: 'Journal') put: (OrderedCollection with: publication1 with: publication3).
-    expectedCategorizedPublications at: (PMLabeledObject new object: 'Conference'; label: 'Conference') put: (OrderedCollection with: publication2).
+    expectedCategorizedPublications at: (PMLabeledObject new object: 2020; label: 2020) put: (OrderedCollection with: publication1 with: publication2).
+    expectedCategorizedPublications at: (PMLabeledObject new object: 2022; label: 2022) put: (OrderedCollection with: publication3).
 
     "Call the method"
-    actualCategorizedPublications := researcher publicationsCategorizedByTypeFromYear: 2020 ToYear: 2022.
+    actualCategorizedPublications := researcher publicationsCategorizedByYearFromYear: 2020 ToYear: 2022.
 
     "Assert that the actual categorized publications match the expected ones"
     self assert: actualCategorizedPublications equals: expectedCategorizedPublications.
 
 	"Assert that the publication outside the range is not in the result"
-    self deny: (actualCategorizedPublications includesKey: (PMLabeledObject new label: 'Papper'; object: 'Paper')).
+    self deny: (actualCategorizedPublications includesKey: (PMLabeledObject new label: 2023; object: 2023)).
