@@ -24,7 +24,7 @@ testAllCollaboratorsFromYearToYear
         at: 2021 put: (OrderedCollection with: publication3);
         yourself).
 
-    expectedCollaborators := Set with: coAuthor1 with: coAuthor2.
+    expectedCollaborators := OrderedCollection  with: coAuthor1 with: coAuthor2.
     actualCollaborators := researcher allCollaboratorsFromYear: 2020 ToYear: 2021.
 
     self assert: actualCollaborators equals: expectedCollaborators.
