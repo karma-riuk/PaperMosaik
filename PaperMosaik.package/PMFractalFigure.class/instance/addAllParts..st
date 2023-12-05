@@ -1,7 +1,7 @@
 accessing
 addAllParts: keyToPublication
 	| maxSize total currentWidth maxArea offset currentHeight yearToNumOfPapers keysSortedByValue oldPart oldExtent |
-	oldExtent := parts extent.
+	
 	parts resetChildren .
 	
 	
@@ -62,8 +62,7 @@ addAllParts: keyToPublication
 
 		parts add: fractalPart ].
 
-	parts announce: [ 
-		RSExtentChangedEvent new shape: parts; oldExtent: oldExtent; newExtent: parts extent.].
+	parts adjustToChildren.
 	self add: parts.
 
 
