@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "<historical>",
 	"super" : "TestCase",
 	"category" : "PaperMosaik-Tests-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "PMVenueEditionTest",
+	"name" : "PMVenueTest",
 	"type" : "normal"
 }
