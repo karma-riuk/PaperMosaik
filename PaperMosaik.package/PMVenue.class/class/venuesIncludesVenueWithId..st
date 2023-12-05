@@ -1,3 +1,3 @@
 utilities
 venuesIncludesVenueWithId: aVenueId
-	^(PMVenue Venues includesKey: aVenueId)
+	^( Venues includesKey: aVenueId)

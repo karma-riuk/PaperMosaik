@@ -18,4 +18,7 @@ venuesByYearAndField
             ]
         ]
     ].
+
+	VenuesByYearAndFields := venuesByYearAndField.
+
     ^venuesByYearAndField
