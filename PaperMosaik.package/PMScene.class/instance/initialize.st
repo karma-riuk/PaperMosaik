@@ -1,7 +1,7 @@
 initialization
 initialize
 	super initialize.
-	self @ RSCanvasController.
+	self @ RSCanvasController  .
 	figureType := PMFractalFigureByType.
 	window := 5.
 	connections := RSGroup new.
