@@ -10,3 +10,4 @@ initialize
 	yourself.
 	self add: (RSBox new size: 1).
 	parts := RSComposite new.
+	label := RSComposite new.
