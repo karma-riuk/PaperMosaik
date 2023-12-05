@@ -11,6 +11,8 @@ model: aResearcher
 	radialFigures := radialFigures first: 25.	
 	self add: centralFigure.
 	self addAll: radialFigures.
-	self connectFigures.
+"	self connectFigures."
 	self layoutHelper.
+
+
 	

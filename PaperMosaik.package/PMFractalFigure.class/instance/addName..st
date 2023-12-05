@@ -1,6 +1,12 @@
 adding
 addName: aName
-	label := RSLabel new text: aName.
-"	label fontSize: self model publications size / 10."
-	RSLocation new below; outer; move: label on: self shapes.
+	
+	label := RSLabel new text: aName; fontSize: 50.
+	
+	RSLocation new below; outer; stick: label on: parts.
+	parts when: RSExtentChangedEvent do: [ :event |
+		self placeLabel ].
 	self add: label.
+	self adjustToChildren.
+	
+	
