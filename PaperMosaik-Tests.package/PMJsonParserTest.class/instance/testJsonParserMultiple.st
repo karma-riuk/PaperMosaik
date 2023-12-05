@@ -16,7 +16,8 @@ testJsonParserMultiple
             "Andrian Marcus"
         ],
         "title": "Data Cleansing: A Prelude to Knowledge Discovery.",
-        "year": 2010
+        "year": 2010,
+		  "v_edition": "wg91"
     },
     {
         "dblp_tag": "incollection",
@@ -29,7 +30,8 @@ testJsonParserMultiple
             "Yann-Gael Gueheneuc"
         ],
         "title": "Design: Patterns.",
-        "year": 2010
+        "year": 2010,
+		  "v_edition": "se102"
     },
     {
         "dblp_tag": "incollection",
@@ -44,7 +46,8 @@ testJsonParserMultiple
             "Arie van Deursen"
         ],
         "title": "Software Evolution.",
-        "year": 2010
+        "year": 2010,
+		  "v_edition": "se101"
     },
     {
         "dblp_tag": "incollection",
@@ -59,10 +62,10 @@ testJsonParserMultiple
             "Gian Pietro Picco"
         ],
         "title": "Content-Based Publish-Subscribe in a Mobile Environment.",
-        "year": 2006
+        "year": 2006,
+		  "v_edition": "91"
     }
-
-                ]'.
+]'.
 
    
 
