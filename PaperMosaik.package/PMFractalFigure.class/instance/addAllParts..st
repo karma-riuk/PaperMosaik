@@ -1,6 +1,6 @@
 accessing
 addAllParts: keyToPublication
-	| maxSize total currentWidth maxArea offset currentHeight yearToNumOfPapers keysSortedByValue oldPart oldExtent |
+	| maxSize total currentWidth maxArea offset currentHeight yearToNumOfPapers keysSortedByValue oldPart oldExtent keysToValueSortedByValue |
 	
 	parts resetChildren .
 	
@@ -10,11 +10,13 @@ addAllParts: keyToPublication
 "
 	
 	yearToNumOfPapers := keyToPublication collect: [ :oldValue | 
-		                     oldValue size ].
+		                     oldValue size ] .
 
-	keysSortedByValue := self cleanAndSort: yearToNumOfPapers.
-
-	total := yearToNumOfPapers
+	keysToValueSortedByValue := self cleanAndSort: yearToNumOfPapers.
+	keysToValueSortedByValue := keysToValueSortedByValue first: (15 min: keysToValueSortedByValue size).
+	keysSortedByValue := keysToValueSortedByValue collect: #key.
+	
+	total := keysToValueSortedByValue
 		         inject: 0
 		         into: [ :sum :each | sum + each value ]. "sum the total values"
 	

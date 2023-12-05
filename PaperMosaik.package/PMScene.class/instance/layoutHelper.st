@@ -22,8 +22,7 @@ layoutHelper
 	fontSize := self visibleRectangle width / 50.
 	centralFigure fontSize: fontSize.
 	radialFigures do: [ :figure | figure fontSize: fontSize ].
-	
-"	PMRadialLayout on: radialFigures."
+
 	PMRadialLayout on: circle10.
 	PMRadialLayout on: circle25.
 	PMRadialLayout on: circle50.
