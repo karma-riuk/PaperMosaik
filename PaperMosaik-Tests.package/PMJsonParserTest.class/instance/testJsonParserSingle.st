@@ -1,6 +1,6 @@
 tests
 testJsonParserSingle
-    | parser mockJSON article fileReference stream pubblication pubblication2 |
+    | parser mockJSON article fileReference stream pubblication pubblication2 venue |
 
     "Mock JSON data for a journal article"
     mockJSON := '[
@@ -16,9 +16,9 @@ testJsonParserSingle
             "Andrian Marcus"
         ],
         "title": "Data Cleansing: A Prelude to Knowledge Discovery.",
-        "year": 2010
-    					}
-
+        "year": 2010,
+		  "v_edition": "wg91"
+						}
                 ]'.
 
 	fileReference := 'mockData.json' asFileReference.
@@ -40,6 +40,9 @@ testJsonParserSingle
 	pubblication2 := (PMResearcher Researchers at: 'Jonathan I. Maletic') publications first .
 	self assert: pubblication equals: pubblication2 .
 	
+	venue := (PMVenue withId: 'dmkdh') .
+	self assert: venue id equals: 'dmkdh' .
+	PMVenue Venues removeKey: 'dmkdh'.
 	
 	
 	
