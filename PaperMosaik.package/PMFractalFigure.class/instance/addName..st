@@ -5,18 +5,18 @@ addName: aName
 	rest := aName copyAfter: Character space.
 	
 	 
-	labelName := RSLabel new text: name; fontSize: 100.
-	labelRest := RSLabel new text: rest; fontSize: 100.
-	RSLocation new below; center; stick: labelRest on: labelName.
+	labelName := RSLabel new text: name.
+	labelRest := RSLabel new text: rest.
+	RSLocation new below; center; offset: 0 @ -100; stick: labelRest on: labelName.
 	
 	label add: labelName.
 	label add: labelRest.
-	label adjustToChildren .
 	
-	RSLocation new below; center; stick: label on: parts.
+	self placeLabel.
+	self add: label.
 	parts when: RSExtentChangedEvent do: [ :event |
 		self placeLabel ].
-	self add: label.
+	
 	self adjustToChildren.
 	
 	

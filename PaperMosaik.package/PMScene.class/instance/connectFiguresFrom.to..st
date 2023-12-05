@@ -10,7 +10,7 @@ connectFiguresFrom: from to: to
 		                                   getAuthorToNumCollaborationsFrom:
 		                                   from
 		                                   to: to.
-	self zoomToFit.
+	
 
 	w := self encompassingRectangle width.
 
