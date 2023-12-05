@@ -5,7 +5,7 @@ testVenuesByField
     | venue1 venue2 venue3 field1 field2 venuesByFieldDict |
 
     "Set up fields and venues"
-    field1 := 'Computer ScienceTest'.
+    field1 := 'Computer ScienceTest2'.
     field2 := 'BiologyTest'.
     venue1 := (PMVenue newWithId: 'venue1') field: field1; yourself.
     venue2 := (PMVenue newWithId: 'venue2') field: field1; yourself.

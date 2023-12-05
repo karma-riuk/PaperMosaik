@@ -11,7 +11,7 @@ testVenuesByYearAndField
     "Creating and adding mock venues with publicationsByYear and field"
     (1 to: 5) do: [ :i |
         (PMVenue newWithId: 'VenueTestCS', i asString)
-            field: 'Computer Science';
+            field: 'Computer ScienceTest';
             publicationsByYear: publicationsByYear1 ].
 
     (1 to: 2) do: [ :i |
@@ -23,10 +23,10 @@ testVenuesByYearAndField
     testResult := PMVenue venuesByYearAndField.
 
     "Assertions to verify the correct grouping"
-    self assert: ((testResult at: 2023) includesKey: 'Computer Science').
-    self assert: ((testResult at: 2023) at: 'Computer Science') size = 5.
+    self assert: ((testResult at: 2023) includesKey: 'Computer ScienceTest').
+    self assert: ((testResult at: 2023) at: 'Computer ScienceTest') size = 5.
     self deny: ((testResult at: 2023) includesKey: 'Physics'). "Physics has fewer than 5 venues"
-    self assert: ((testResult at: 2024) includesKey: 'Computer Science').
-    self assert: (((testResult at: 2024) at: 'Computer Science') size = 5).
+    self assert: ((testResult at: 2024) includesKey: 'Computer ScienceTest').
+    self assert: (((testResult at: 2024) at: 'Computer ScienceTest') size = 5).
     self deny: ((testResult at: 2024) includesKey: 'Physics'). "Physics has fewer than 5 venues and no venues in 2024"
 

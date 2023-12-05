@@ -18,6 +18,7 @@ venuesByField: minNumVenue
             dictionaryByField removeKey: key ] ].
 	 
 	dictionaryByField removeKey: nil ifAbsent: [].
+	dictionaryByField removeKey: 'Computer Science' ifAbsent: [].
 	dictionaryByField removeKey: 'Undefined' ifAbsent: [].
 
     ^ dictionaryByField
