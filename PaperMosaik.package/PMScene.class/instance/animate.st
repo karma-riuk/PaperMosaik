@@ -21,15 +21,13 @@ animate
 			currentEndYear - startYear < window ifTrue: [ 
 				currentEndYear := currentEndYear + 1.
 				].
-			endYear - currentStartYear <= window ifTrue: [ 
-				currentStartYear := currentStartYear + 1.
-				].
-			(currentEndYear - startYear >= window and: endYear - currentStartYear > window) ifTrue:[
+			(currentEndYear - startYear >= window and: endYear - currentStartYear >= window) ifTrue:[
 				currentStartYear := currentStartYear + 1.
 				currentEndYear := currentEndYear + 1.
 				].
-			currentStartYear = endYear ifTrue: [
+			currentEndYear = (endYear + 1) ifTrue: [
 				currentStartYear := startYear.
 				currentEndYear := currentStartYear + 1.
+				self updateHelperFrom: currentStartYear to: currentEndYear.
 				].
 			label text: currentStartYear asString , ' - ' , currentEndYear asString ]
