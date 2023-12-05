@@ -12,7 +12,8 @@
 		"startYear",
 		"endYear",
 		"window",
-		"connections"
+		"connections",
+		"radius"
 	],
 	"name" : "PMScene",
 	"type" : "normal"

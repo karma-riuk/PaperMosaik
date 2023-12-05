@@ -9,7 +9,8 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"palette",
-		"label"
+		"label",
+		"parts"
 	],
 	"name" : "PMFractalFigure",
 	"type" : "normal"

@@ -1,8 +1,12 @@
 accessing
 fontSize: fontSize
-	self shapes do: [ :shape |
+	
+	| name rest |
+	label children do: [ :shape |
 		shape class = RSLabel ifTrue: [ 
 			shape fontSize: fontSize ] ].
-	self removeShape: label.
-	RSLocation new below; outer; move: label on: self shapes.
-	self add: label.
+	name := label children at: 1.
+	rest := label children at: 2.
+	RSLocation new below; center; offset: 0 @ -100; stick: rest on: name.
+	label adjustToChildren.
+	self adjustToChildren.
