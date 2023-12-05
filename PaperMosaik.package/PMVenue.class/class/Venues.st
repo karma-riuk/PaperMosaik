@@ -1,4 +1,4 @@
 accessing
 Venues
-   Venues ifNil: [ Venues := Dictionary new]. 
+   Venues ifEmpty: [ PMJsonParser new parseVenues].
 	^Venues
