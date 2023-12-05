@@ -16,7 +16,6 @@ animate
 		duration: 1 seconds;
 		when: RSAnimationLoopEvent do: [ :evt | 
 			self updateHelperFrom: currentStartYear to: currentEndYear.
-"			self layoutHelper."
 
 			"update current year"
 			currentEndYear - startYear < window ifTrue: [ 

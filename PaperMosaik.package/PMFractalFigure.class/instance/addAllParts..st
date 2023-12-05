@@ -1,13 +1,8 @@
 accessing
 addAllParts: keyToPublication
-	| maxSize total currentWidth maxArea offset currentHeight yearToNumOfPapers keysSortedByValue oldPart oldExtent keysToValueSortedByValue |
+	| maxSize total currentWidth maxArea offset currentHeight yearToNumOfPapers keysSortedByValue oldPart keysToValueSortedByValue |
 	
 	parts resetChildren .
-	
-	
-"	parts do: [ :part | self removeShape: part ].
-	parts removeAll.
-"
 	
 	yearToNumOfPapers := keyToPublication collect: [ :oldValue | 
 		                     oldValue size ] .
@@ -49,7 +44,6 @@ addAllParts: keyToPublication
 			               withColor:
 			               (palette at: iteration % palette size + 1).
 		fractalPart model: (keyToPublication at: currentKey).
-"		fractalPart translateTopLeftTo: offset."
 		fractalPart @ (RSPopup new text: currentKey label).
 
 		iteration % 2 = 1 ifTrue: [ 
@@ -67,6 +61,4 @@ addAllParts: keyToPublication
 	parts adjustToChildren.
 	self add: parts.
 
-
-"	self placeLabel."
 	
