@@ -5,13 +5,9 @@ I represent a fractal figure that displays the number of papers written by a res
 ```st
 PMResearcher Researchers.
 
-ducasse := PMResearcher Researchers at: 'Stephane Ducasse'.
+lanza := PMResearcher Researchers at: 'Michele Lanza'.
 
-scene := PMScene new.
+scene := PMScene new figureType: PMFractalFigureByCollab; model: lanza.
 
-scene add: (PMFractalFigureByCollab new model: ducasse).
-
-scene @ RSCanvasController.
-scene zoomToFit.
 scene open.
 ```

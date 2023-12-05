@@ -11,8 +11,10 @@ addAllParts: keyToPublication
 	total := yearToNumOfPapers
 		         inject: 0
 		         into: [ :sum :each | sum + each value ]. "sum the total values"
+	
 
-	maxSize := total. "Size is proportional of the total value"
+
+	maxSize := total + 10. "Size is proportional of the total value"
 	maxArea := maxSize * maxSize.
 
 	"The origins of every new cube, they are updated every iteration"

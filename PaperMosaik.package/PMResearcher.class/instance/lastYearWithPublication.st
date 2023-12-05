@@ -1,3 +1,3 @@
 accessing
 lastYearWithPublication
-	^(publicationsByYear keys last)
+	^(publicationsByYear keys sort last)
