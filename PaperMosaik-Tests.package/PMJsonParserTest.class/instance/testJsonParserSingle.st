@@ -1,6 +1,6 @@
 tests
 testJsonParserSingle
-    | parser mockJSON article fileReference stream pubblication pubblication2 venueEdition|
+    | parser mockJSON article fileReference stream pubblication pubblication2 venue |
 
     "Mock JSON data for a journal article"
     mockJSON := '[
@@ -40,10 +40,9 @@ testJsonParserSingle
 	pubblication2 := (PMResearcher Researchers at: 'Jonathan I. Maletic') publications first .
 	self assert: pubblication equals: pubblication2 .
 	
-	self assert: (PMVenue venuesIncludesVenueWithId: 'dmkdh-wg91') .
-	venueEdition := (PMVenue withId: 'dmkdh-wg91') .
-	self assert: venueEdition venueName equals: 'dmkdh' .
-	self assert: venueEdition venueEdition equals: 'wg91' .
+	venue := (PMVenue withId: 'dmkdh') .
+	self assert: venue id equals: 'dmkdh' .
+	PMVenue Venues removeKey: 'dmkdh'.
 	
 	
 	

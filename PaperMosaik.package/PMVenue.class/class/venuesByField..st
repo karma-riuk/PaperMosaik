@@ -17,7 +17,7 @@ venuesByField: minNumVenue
         (dictionaryByField at: key) size < minNumVenue ifTrue: [
             dictionaryByField removeKey: key ] ].
 	 
-	dictionaryByField removeKey: nil.
-	dictionaryByField removeKey: 'Undefined'.
+	dictionaryByField removeKey: nil ifAbsent: [].
+	dictionaryByField removeKey: 'Undefined' ifAbsent: [].
 
     ^ dictionaryByField
