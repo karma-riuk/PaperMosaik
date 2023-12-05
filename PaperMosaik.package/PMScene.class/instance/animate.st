@@ -10,13 +10,12 @@ animate
 	label translateBy: 100 @ 20.
 
 	self updateHelperFrom: currentStartYear to: currentEndYear.
-	self layoutHelper.
+
 
 	self newAnimation repeat
 		duration: 1 seconds;
 		when: RSAnimationLoopEvent do: [ :evt | 
 			self updateHelperFrom: currentStartYear to: currentEndYear.
-			self layoutHelper.
 
 			"update current year"
 			currentEndYear - startYear < window ifTrue: [ 

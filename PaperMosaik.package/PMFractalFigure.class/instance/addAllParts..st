@@ -1,29 +1,32 @@
 accessing
 addAllParts: keyToPublication
-	| maxSize total currentWidth maxArea currentOrigin shapesToAdd currentHeight yearToNumOfPapers keysSortedByValue |
-	self @ RSDraggable.
+	| maxSize total currentWidth maxArea offset currentHeight yearToNumOfPapers keysSortedByValue oldPart keysToValueSortedByValue |
+	
+	parts resetChildren .
 	
 	yearToNumOfPapers := keyToPublication collect: [ :oldValue | 
-		                     oldValue size ].
+		                     oldValue size ] .
 
-	keysSortedByValue := self cleanAndSort: yearToNumOfPapers.
-
-	total := yearToNumOfPapers
+	keysToValueSortedByValue := self cleanAndSort: yearToNumOfPapers.
+	keysToValueSortedByValue := keysToValueSortedByValue first: (15 min: keysToValueSortedByValue size).
+	keysSortedByValue := keysToValueSortedByValue collect: #key.
+	
+	total := keysToValueSortedByValue
 		         inject: 0
 		         into: [ :sum :each | sum + each value ]. "sum the total values"
 	
 
 
-	maxSize := total + 10. "Size is proportional of the total value"
+	maxSize := 5 * (total + 100). "Size is proportional of the total value"
 	maxArea := maxSize * maxSize.
 
 	"The origins of every new cube, they are updated every iteration"
 	currentWidth := maxSize. "currently the size of the max edge on x axis"
 	currentHeight := maxSize. "same as above but for y axis"
-	currentOrigin := 0 @ 0.
+	offset := 0 @ 0.
 
-	shapesToAdd := RSGroup new.
-
+	
+	oldPart := RSBox new size: 0.
 	keysSortedByValue withIndexDo: [ :currentKey :iteration | 
 		| fractalPart percentage percentageArea |
 		percentage := ((yearToNumOfPapers at: currentKey) / total) asFloat.
@@ -41,14 +44,21 @@ addAllParts: keyToPublication
 			               withColor:
 			               (palette at: iteration % palette size + 1).
 		fractalPart model: (keyToPublication at: currentKey).
-		fractalPart translateTopLeftTo: currentOrigin.
 		fractalPart @ (RSPopup new text: currentKey label).
 
-		currentOrigin := iteration % 2 = 1
-			                 ifTrue: [ currentOrigin + (currentWidth @ 0) ]
-			                 ifFalse: [ currentOrigin + (0 @ currentHeight) ].
-		currentWidth := maxSize - currentOrigin x.
-		currentHeight := maxSize - currentOrigin y.
+		iteration % 2 = 1 ifTrue: [ 
+			offset := offset + (currentWidth @ 0).
+			RSLocation new below; left; offset: fractalPart width @ 0; stick: fractalPart on: oldPart.] 
+		ifFalse: [ 
+			offset := offset + (0 @ currentHeight).
+			RSLocation new above; right; outer; offset: 0 @ fractalPart height; stick: fractalPart on: oldPart. ].
+		oldPart := fractalPart.
+		currentWidth := maxSize - offset x.
+		currentHeight := maxSize - offset y.
 
-		shapesToAdd add: fractalPart ].
-	self shapes: shapesToAdd
+		parts add: fractalPart ].
+
+	parts adjustToChildren.
+	self add: parts.
+
+	
