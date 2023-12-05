@@ -17,8 +17,11 @@ parsePhase3: pathEntireDblpDb
 				publication := PMPublication newWithId: ((eachItem at: 'key_parts' ifAbsent: [nil]) joinUsing: '') .
 				publication	title: (eachItem at: 'title') ;
 					year: (eachItem at: 'year') asInteger .
-					
-				venue := PMVenue Venues at: ((eachItem at: 'key_parts') second) . "use venue name as id"
-				venue addPublication: publication.
+				
+				((PMVenue Venues) includesKey: ((eachItem at: 'key_parts') second)) 
+				ifTrue: [ 
+					venue := (PMVenue Venues) at: ((eachItem at: 'key_parts') second) . "use venue name as id"
+					venue addPublication: publication.
+				]
 			]
    ]
