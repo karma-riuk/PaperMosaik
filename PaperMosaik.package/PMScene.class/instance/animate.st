@@ -14,8 +14,9 @@ animate
 
 	self newAnimation repeat
 		duration: 1 seconds;
-		when: RSAnimationLoopEvent do: [ :evt | 
+		when: RSAnimationLoopEvent do: [ :evt | | oldSize newSize |
 			self updateHelperFrom: currentStartYear to: currentEndYear.
+			oldSize := centralFigure parts width.
 
 			"update current year"
 		
@@ -31,5 +32,12 @@ animate
 				currentEndYear := currentStartYear + 1.
 				self updateHelperFrom: currentStartYear to: currentEndYear.
 				].
+			newSize := centralFigure maxSizeFromYear: currentStartYear toYear: currentEndYear.
+			self newAnimation from: oldSize; to: newSize; on: centralFigure set: #partsSize:.
+"			centralFigure parts extent: 1000 @ 1000.
+""			centralFigure parts adjustToChildren.""
+			b := RSBox new extent: centralFigure parts extent.
+			centralFigure parts add: b."
+
 
 			label text: currentStartYear asString , ' - ' , currentEndYear asString ]
