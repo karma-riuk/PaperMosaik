@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "LorenzoVarese 12/6/2023 23:08",
+	"super" : "PMFractalFigure",
+	"category" : "PaperMosaik-Fractal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"year"
+	],
+	"name" : "PMFractalFigureByVenue",
+	"type" : "normal"
+}

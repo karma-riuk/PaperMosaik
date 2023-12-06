@@ -1,13 +1,12 @@
 accessing
-addAllParts: keyToPublication
-	| maxSize total currentWidth maxArea offset currentHeight yearToNumOfPapers keysSortedByValue oldPart keysToValueSortedByValue |
+addAllParts: keyToFractalContents
+	| maxSize total currentWidth maxArea offset currentHeight fromLabelObjToFractalContents keysSortedByValue oldPart keysToValueSortedByValue |
 	
 	parts resetChildren .
 	
-	yearToNumOfPapers := keyToPublication collect: [ :oldValue | 
-		                     oldValue size ] .
+	fromLabelObjToFractalContents := self sizeOfFractalPartContaining: keyToFractalContents .
 
-	keysToValueSortedByValue := self cleanAndSort: yearToNumOfPapers.
+	keysToValueSortedByValue := self cleanAndSort: fromLabelObjToFractalContents.
 	keysToValueSortedByValue := keysToValueSortedByValue first: (15 min: keysToValueSortedByValue size).
 	keysSortedByValue := keysToValueSortedByValue collect: #key.
 	
@@ -29,7 +28,7 @@ addAllParts: keyToPublication
 	oldPart := RSBox new size: 0.
 	keysSortedByValue withIndexDo: [ :currentKey :iteration | 
 		| fractalPart percentage percentageArea |
-		percentage := ((yearToNumOfPapers at: currentKey) / total) asFloat.
+		percentage := ((fromLabelObjToFractalContents at: currentKey) / total) asFloat.
 		percentageArea := maxArea * percentage.
 
 		iteration % 2 = 1
@@ -43,7 +42,7 @@ addAllParts: keyToPublication
 			               withHeight: currentHeight
 			               withColor:
 			               (palette at: iteration % palette size + 1).
-		fractalPart model: (keyToPublication at: currentKey).
+		fractalPart model: (keyToFractalContents at: currentKey).
 		fractalPart @ (RSPopup new text: currentKey label).
 
 		iteration % 2 = 1 ifTrue: [ 
