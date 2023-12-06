@@ -1,3 +1,5 @@
 accessing
 partsSize: newSize
-	parts scaleBy: newSize / parts width.
+	parts width > 0 ifTrue: [ parts scaleBy: newSize / parts width. ].
+	parts adjustToChildren.
+	
