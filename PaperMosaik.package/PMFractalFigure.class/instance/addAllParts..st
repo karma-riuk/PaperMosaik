@@ -17,7 +17,7 @@ addAllParts: keyToPublication
 	
 
 
-	maxSize := 5 * (total + 100). "Size is proportional of the total value"
+	maxSize := self maxSize: total. "Size is proportional of the total value"
 	maxArea := maxSize * maxSize.
 
 	"The origins of every new cube, they are updated every iteration"
