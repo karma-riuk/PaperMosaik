@@ -60,5 +60,6 @@ addAllParts: keyToPublication
 
 	parts adjustToChildren.
 	self add: parts.
+	total > 0 ifTrue: [ parts translateBy: (-1 * parts width/2) @ (-1 * parts height/2) ].
 
 	
