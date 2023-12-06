@@ -12,6 +12,7 @@ model: aResearcher
 	self add: centralFigure.
 	self addAll: radialFigures.
 	self layoutHelper.
+	self adjustFontSize.
 	self connectFigures.
 	
 
