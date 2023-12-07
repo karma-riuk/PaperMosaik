@@ -1,22 +1,21 @@
 accessing
 addAllParts: keyToFractalContents
-	| maxSize total currentWidth maxArea offset currentHeight fromLabelObjToFractalContents keysSortedByValue oldPart keysToValueSortedByValue |
+	| maxSize total currentWidth maxArea offset currentHeight fromLabelObjToFractalSize keysSortedByValue oldPart keysToValueSortedByValue |
 	
 	parts resetChildren .
 	
-	fromLabelObjToFractalContents := self sizeOfFractalPartContaining: keyToFractalContents .
+	fromLabelObjToFractalSize := self fractalPartsWithLabelToSize: keyToFractalContents .
 
-	keysToValueSortedByValue := self cleanAndSort: fromLabelObjToFractalContents.
+	keysToValueSortedByValue := self cleanAndSort: fromLabelObjToFractalSize.
 	keysToValueSortedByValue := keysToValueSortedByValue first: (15 min: keysToValueSortedByValue size).
 	keysSortedByValue := keysToValueSortedByValue collect: #key.
 	
 	total := keysToValueSortedByValue
 		         inject: 0
 		         into: [ :sum :each | sum + each value ]. "sum the total values"
-	
 
 
-	maxSize := 5 * (total + 100). "Size is proportional of the total value"
+	maxSize :=  self maxSizeValueFromTotal: total . "Size is proportional of the total value"
 	maxArea := maxSize * maxSize.
 
 	"The origins of every new cube, they are updated every iteration"
@@ -28,7 +27,7 @@ addAllParts: keyToFractalContents
 	oldPart := RSBox new size: 0.
 	keysSortedByValue withIndexDo: [ :currentKey :iteration | 
 		| fractalPart percentage percentageArea |
-		percentage := ((fromLabelObjToFractalContents at: currentKey) / total) asFloat.
+		percentage := ((fromLabelObjToFractalSize at: currentKey) / total) asFloat.
 		percentageArea := maxArea * percentage.
 
 		iteration % 2 = 1
@@ -43,7 +42,7 @@ addAllParts: keyToFractalContents
 			               withColor:
 			               (palette at: iteration % palette size + 1).
 		fractalPart model: (keyToFractalContents at: currentKey).
-		fractalPart @ (RSPopup new text: currentKey label).
+		fractalPart @ (RSPopup new text: currentKey label) .
 
 		iteration % 2 = 1 ifTrue: [ 
 			offset := offset + (currentWidth @ 0).
