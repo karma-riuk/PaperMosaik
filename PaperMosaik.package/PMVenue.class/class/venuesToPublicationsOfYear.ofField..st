@@ -9,7 +9,10 @@ venuesToPublicationsOfYear: anYear ofField: aField
 	
 	fieldData do: [ :venue | 
 			(venuesToPublications includesKey: venue) ifFalse: [ venuesToPublications at: venue put: OrderedCollection new ] .
-			(venuesToPublications at: venue) addAll: (venue publicationsByYear at: anYear) 
+			(venue publicationsByYear includesKey: anYear) 
+			ifTrue: [ 
+				(venuesToPublications at: venue) addAll: (venue publicationsByYear at: anYear) 
+			]
 		 ].
 	
 	^venuesToPublications 
