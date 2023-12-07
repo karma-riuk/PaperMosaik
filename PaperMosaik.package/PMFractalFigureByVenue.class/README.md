@@ -16,10 +16,35 @@ group add: figureSWEfield.
 group add: figureMLfield.
 group add: figureCIfield.
 
+"And if you want to test other fields: PMVenue allFields return the fields"
+
 grid := RSGridLayout new.
 grid applyOn: group .
 
 canvas add: group asShape  .
+
+canvas @ RSCanvasController  .
+
+canvas open.
+
+1.
+```
+
+## Example with all fields
+
+```st
+canvas := RSCanvas new .
+
+group := RSGroup new.
+
+PMVenue allFields do: [ :fieldName | group add: (PMFractalFigureByVenue new model: fieldName year: 2018 ) ] .
+
+grid := RSGridLayout new.
+grid applyOn: group .
+
+canvas add: group asShape  .
+
+canvas @ RSCanvasController  .
 
 canvas open.
 
