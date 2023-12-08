@@ -12,8 +12,10 @@
 		"startYear",
 		"endYear",
 		"window",
-		"connections",
-		"radius"
+		"radius",
+		"minConnectionThickness",
+		"maxConnectionThickness",
+		"connections"
 	],
 	"name" : "PMScene",
 	"type" : "normal"

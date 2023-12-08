@@ -1,3 +1,3 @@
 accessing
-maxSize: total
-	^ 5 * (total + 100).
+maxSize: n
+	^ 5 * (n + 100).

@@ -5,4 +5,5 @@ updateHelperFrom: from to: to
 	radialFigures do: [ :figure| 
 					figure fromYear: from  toYear: to.
 			].
-	self connectFiguresFrom: from to: to.
+	self updateConnectionsFrom: from to: to.
+	

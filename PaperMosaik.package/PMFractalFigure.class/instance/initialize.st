@@ -9,5 +9,6 @@ initialize
 	add: (Color fromString: '343a40'); "Dark gray"  
 	yourself.
 	
-	parts := RSComposite new.
+	parts := RSComposite new size: 10.
+	self add: parts.
 	label := RSComposite new.

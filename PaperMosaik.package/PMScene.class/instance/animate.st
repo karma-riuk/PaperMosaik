@@ -2,6 +2,9 @@ animation
 animate
 
 	| currentStartYear currentEndYear labelText label |
+	
+	connections children do: [ :connection | connection width: 0 ].
+	
 	currentStartYear := startYear.
 	currentEndYear := currentStartYear + 1.
 	labelText := currentEndYear asString.
