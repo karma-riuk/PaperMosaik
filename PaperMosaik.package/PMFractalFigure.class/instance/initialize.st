@@ -9,6 +9,5 @@ initialize
 	add: (Color fromString: '343a40'); "Dark gray"  
 	yourself.
 	
-	parts := RSComposite new borderColor: Color black.
-	parts border width: 5.
+	parts := RSComposite new.
 	label := RSComposite new.
