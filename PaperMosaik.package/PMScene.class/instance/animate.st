@@ -16,7 +16,7 @@ animate
 
 
 	self newAnimation repeat
-		duration: 1 seconds;
+		duration: duration seconds;
 		when: RSAnimationLoopEvent do: [ :evt | | oldSizeCentral newSizeCentral oldSizesRadial newSizesRadial |
 			self updateHelperFrom: currentStartYear to: currentEndYear.
 			oldSizeCentral := centralFigure parts width.
@@ -40,9 +40,9 @@ animate
 			newSizeCentral := centralFigure maxSizeFromYear: currentStartYear toYear: currentEndYear.
 			newSizesRadial := radialFigures collect: [ :fig | fig maxSizeFromYear: currentStartYear toYear: currentEndYear ] into: OrderedCollection new.
 			
-			self newAnimation duration: 1 seconds; from: oldSizeCentral; to: newSizeCentral; on: centralFigure set: #partsSize:.
+			self newAnimation duration: duration seconds; from: oldSizeCentral; to: newSizeCentral; on: centralFigure set: #partsSize:.
 			1 to: radialFigures size do: [ :i | 
-				self newAnimation duration: 1 seconds;
+				self newAnimation duration: duration seconds;
 				from: (oldSizesRadial at: i); to: (newSizesRadial at: i);
 				 on: (radialFigures at: i) set: #partsSize:. ].
 			

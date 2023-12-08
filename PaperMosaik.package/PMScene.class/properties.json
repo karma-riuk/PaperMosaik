@@ -15,7 +15,8 @@
 		"radius",
 		"minConnectionThickness",
 		"maxConnectionThickness",
-		"connections"
+		"connections",
+		"duration"
 	],
 	"name" : "PMScene",
 	"type" : "normal"

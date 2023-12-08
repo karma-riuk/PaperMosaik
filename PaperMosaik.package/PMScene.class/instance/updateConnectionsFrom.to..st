@@ -1,7 +1,7 @@
 helper methods
 updateConnectionsFrom: from to: to
 
-	| collaboratorToNumCollaborations maxCollaborations a an |
+	| collaboratorToNumCollaborations maxCollaborations timeToWait |
 	collaboratorToNumCollaborations := centralFigure model
 		                                   getAuthorToNumCollaborationsFrom:
 		                                   from
@@ -23,14 +23,18 @@ updateConnectionsFrom: from to: to
 		              * (maxConnectionThickness - minConnectionThickness))
 			             ceiling
 			].
-		a := 1.
-"		connection width: newThickness.
-		self newAnimation duration: 0.5 seconds; from: oldThickness; to: newThickness; 
-		onStepDo: [ :width |
-			connection width: width.
-			 ]."	
-		an := self newAnimation noRepeat; duration: 1 seconds; 
+		
+"		(newThickness ~= oldThickness) ifTrue: [ 
+			timeToWait := duration / (newThickness - oldThickness) abs.
+			[ oldThickness to: newThickness do: [ :thickness | 
+				connection width: thickness.
+				(Delay forSeconds: timeToWait) wait.
+			 ] ] fork.
+		]."
+"		connection width: newThickness."
+			
+		self newAnimation noRepeat; duration: duration seconds; 
 				from: oldThickness ; to: newThickness ; 
 				on: connection set: #width:.
-		].
+	].
 		
