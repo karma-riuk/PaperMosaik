@@ -16,7 +16,8 @@
 		"minConnectionThickness",
 		"maxConnectionThickness",
 		"connections",
-		"duration"
+		"duration",
+		"cachedThicknesses"
 	],
 	"name" : "PMScene",
 	"type" : "normal"
