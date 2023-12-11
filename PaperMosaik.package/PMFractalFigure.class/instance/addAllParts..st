@@ -3,7 +3,7 @@ addAllParts: maxSize
 	| currentWidth maxArea offset currentHeight oldPart |
 	
 	parts resetChildren .
-
+	
 	"maxSize := self maxSize: total. ""Size is proportional of the total value"
 	maxArea := maxSize * maxSize.
 
