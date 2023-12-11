@@ -10,7 +10,13 @@
 	"instvars" : [
 		"palette",
 		"label",
-		"parts"
+		"parts",
+		"keyToPublication",
+		"keysToSizeSortedBySize",
+		"keysSortedBySize",
+		"keyToNumOfPapers",
+		"total",
+		"transparency"
 	],
 	"name" : "PMFractalFigure",
 	"type" : "normal"

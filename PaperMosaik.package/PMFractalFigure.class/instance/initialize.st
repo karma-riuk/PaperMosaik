@@ -8,6 +8,7 @@ initialize
 	add: (Color fromString: '118ab2'); "Light blue"  
 	add: (Color fromString: '343a40'); "Dark gray"  
 	yourself.
-	self add: (RSBox new size: 1).
-	parts := RSComposite new.
+	transparency := 1.
+	parts := RSComposite new size: 10.
+	self add: parts.
 	label := RSComposite new.
