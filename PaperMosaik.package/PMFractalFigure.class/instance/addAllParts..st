@@ -11,7 +11,12 @@ addAllParts: maxSize
 	currentWidth := maxSize. "currently the size of the max edge on x axis"
 	currentHeight := maxSize. "same as above but for y axis"
 	offset := 0 @ 0.
-
+	
+	keysSortedBySize isEmpty ifTrue: [ |b|
+		b := RSBox new size: maxSize; color: (palette at: 2).
+		b color: (b color alpha: transparency).
+		parts add: b.
+		 ].
 	
 	oldPart := RSBox new size: 0.
 	keysSortedBySize withIndexDo: [ :currentKey :iteration | 
