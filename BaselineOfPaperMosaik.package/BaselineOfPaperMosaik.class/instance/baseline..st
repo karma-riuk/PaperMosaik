@@ -11,11 +11,6 @@ baseline: spec
 				
 			" Dependencies "
 			spec 
-				baseline: 'MongoTalk'
-				with: [ spec 
-					repository: 'github://pharo-nosql/mongotalk/mc'
-				].
-			spec 
 				baseline: 'NeoJSON' 
 				with: [ spec
 					 repository: 'github://svenvc/NeoJSON/repository' 
