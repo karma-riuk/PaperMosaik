@@ -21,6 +21,7 @@ connectFiguresFrom: from to: to
 
 	radialResearchers := OrderedCollection new.
 	radialFigures do: [ :fig | radialResearchers add: fig model ].
+	radialFigures do: [ :fig | fig setTransparency: 0.3].
 
 	nCols := OrderedCollection new.
 	radialResearchers do: [ :res | 
@@ -33,6 +34,7 @@ connectFiguresFrom: from to: to
 	radialFigures do: [ :fig | 
 		| col nCol thickness line |
 		(collaboratorToNumCollaborations includesKey: fig model) ifTrue: [ 
+			fig setTransparency: 1.
 			col := fig model.
 			nCol := collaboratorToNumCollaborations at: col.
 			thickness := minLineThickness
