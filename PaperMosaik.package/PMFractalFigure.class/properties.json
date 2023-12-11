@@ -15,7 +15,8 @@
 		"keysToSizeSortedBySize",
 		"keysSortedBySize",
 		"keyToNumOfPapers",
-		"total"
+		"total",
+		"transparency"
 	],
 	"name" : "PMFractalFigure",
 	"type" : "normal"

@@ -12,33 +12,30 @@ updateConnectionsFrom: from to: to
 		
 		newThickness := collaboratorToThickness at: connection from model ifAbsent: [ 0 ].
 		
-"		step := (newThickness - oldThickness) / 60."
-"			self newAnimation duration: (duration / 60) seconds; loops: 60;
-			when: RSAnimationLoopEvent do: [ :evt |
-					connection width: oldThickness + evt animation currentLoop * step.
-			 ];
-			 when: RSAnimationEndEvent do: [ :evt |
-					connection width: newThickness.
-			 ]."
-		
-"		(newThickness ~= oldThickness) ifTrue: [ 
-			timeToWait := duration / (newThickness - oldThickness) abs.
-			[ oldThickness to: newThickness do: [ :thickness | 
-				connection width: thickness.
-				(Delay forSeconds: timeToWait) wait.
-			 ] ] fork.
-		]."
-	
-"		connection width: newThickness."
-			
-		"self newAnimation duration: duration seconds; 
-				from: oldThickness ; to: newThickness ; 
-				on: connection set: #width:."
+		newThickness = 0 ifTrue:[
+				oldThickness ~= 0 ifTrue: [ 
+					compositeAnimation add: (RSTransitionAnimation new 
+						duration: (duration / 5) seconds; 
+						from: 1; to: 0.3; 
+						on: connection from set: #setTransparency:).
+				].
+"				connection from setTransparency: 0.3."
+			] ifFalse: [
+				oldThickness = 0 ifTrue: [
+					compositeAnimation add: (RSTransitionAnimation new 
+						duration: (duration / 5) seconds; 
+						from: 0.3; to: 1; 
+						on: connection from set: #setTransparency:).
+				].
+"				connection from setTransparency: 1."
+			].
 
-		compositeAnimation add: (RSTransitionAnimation new 
-			duration: (duration / 5) seconds; 
-			from: oldThickness; to: newThickness; 
-			on: connection set: #width:).
+		oldThickness ~= newThickness ifTrue: [
+			compositeAnimation add: (RSTransitionAnimation new 
+				duration: (duration / 2) seconds; 
+				from: oldThickness; to: newThickness; 
+				on: connection set: #width:).
+			].
 	].
 	^ compositeAnimation.
 	

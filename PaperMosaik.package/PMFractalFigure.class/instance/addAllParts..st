@@ -30,6 +30,7 @@ addAllParts: maxSize
 			               withHeight: currentHeight
 			               withColor:
 			               (palette at: iteration % palette size + 1).
+		fractalPart color: (fractalPart color alpha: transparency).
 		fractalPart model: (keyToPublication at: currentKey).
 		fractalPart @ (RSPopup new text: currentKey label).
 

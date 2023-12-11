@@ -4,6 +4,7 @@ animate
 	| currentStartYear currentEndYear labelText label parallelAnimations sequentialAnimations |
 	
 	connections children do: [ :connection | connection width: 0 ].
+	radialFigures do: [ :fig | fig setTransparency: 0.3 ].
 	self cacheThicknesses.
 	parallelAnimations := RSParallelAnimation new.
 	sequentialAnimations := RSSequentialAnimation  new.
@@ -42,17 +43,21 @@ animate
 			currentEndYear = (endYear + 1) ifTrue: [
 				currentStartYear := startYear.
 				currentEndYear := currentStartYear + 1.
-"				self updateHelperFrom: currentStartYear to: currentEndYear."
 				].
 			newSizeCentral := centralFigure maxSizeFromYear: currentStartYear toYear: currentEndYear.
 			newSizesRadial := radialFigures collect: [ :fig | fig maxSizeFromYear: currentStartYear toYear: currentEndYear ] into: OrderedCollection new.
 			
 			parallelAnimations add: (RSTransitionAnimation new  duration: (duration / 2) seconds; from: oldSizeCentral; to: newSizeCentral; on: centralFigure set: #partsSize:).
 			
-			1 to: radialFigures size do: [ :i | 
-				parallelAnimations add: (RSTransitionAnimation new duration: (duration / 2) seconds;
-				from: (oldSizesRadial at: i); to: (newSizesRadial at: i);
-				 on: (radialFigures at: i) set: #partsSize:). ].
+			1 to: radialFigures size do: [ :i | | oldSize newSize |
+				oldSize := oldSizesRadial at: i.
+				newSize := newSizesRadial at: i.
+				oldSize ~= newSize ifTrue: [
+					parallelAnimations add: (RSTransitionAnimation new duration: (duration / 2) seconds;
+						from: oldSize; to: newSize;
+				 		on: (radialFigures at: i) set: #partsSize:).
+					].
+				].
 			sequentialAnimations add: parallelAnimations.
 			
 			self addAnimation: sequentialAnimations.
