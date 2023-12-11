@@ -7,8 +7,7 @@ model: aResearcher
 		endYear := aResearcher lastYearWithPublication
 	].
 	centralFigure := figureType new model: aResearcher.	
-	radialFigures := aResearcher allCollaborators collect: [ :collab | figureType new model: collab ] into: RSGroup new.
-	radialFigures := radialFigures.	
+	radialFigures := aResearcher allCollaborators collect: [ :collab | figureType new model: collab ] into: RSGroup new.	
 	self add: centralFigure.
 	self addAll: radialFigures.
 	self layoutHelper.

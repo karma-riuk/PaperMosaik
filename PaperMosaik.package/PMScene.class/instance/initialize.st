@@ -4,4 +4,5 @@ initialize
 	self @ RSCanvasController  .
 	figureType := PMFractalFigureByType.
 	window := 5.
-	connections := RSGroup new.
+	duration := 1.
+	connections := RSComposite new.
