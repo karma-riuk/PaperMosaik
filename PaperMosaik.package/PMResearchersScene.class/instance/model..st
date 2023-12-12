@@ -10,7 +10,7 @@ model: aResearcher
 	radialFigures := aResearcher allCollaborators collect: [ :collab | figureType new model: collab ] into: RSGroup new.	
 	self add: centralFigure.
 	self addAll: radialFigures.
-	self layoutHelper.
+	self layoutFigures.
 	self adjustFontSize.
 	self connectFigures.
 	

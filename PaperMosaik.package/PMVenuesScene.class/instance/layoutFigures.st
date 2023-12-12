@@ -1,3 +1,3 @@
 animation
 layoutFigures
-	RSCellLayout on: figures.
+	PMCellLayout on: figures.

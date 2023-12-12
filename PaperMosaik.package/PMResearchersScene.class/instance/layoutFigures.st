@@ -1,5 +1,5 @@
 helper methods
-layoutHelper
+layoutFigures
 	| oldIndex currentIndex circle iteration |
 	currentIndex := 0.
 	iteration := 0.

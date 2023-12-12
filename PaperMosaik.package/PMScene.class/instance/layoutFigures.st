@@ -1,0 +1,3 @@
+animation
+layoutFigures
+	self subclassResponsibility.

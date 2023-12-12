@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "RSCellLayout",
+	"category" : "PaperMosaik-Fractal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "PMCellLayout",
+	"type" : "normal"
+}
