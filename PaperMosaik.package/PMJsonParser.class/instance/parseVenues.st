@@ -3,7 +3,7 @@ parseVenues
 
     | fileReference path workingDirectory |
     workingDirectory := FileLocator workingDirectory.
-    path :=  workingDirectory fullName , '/pharo-local/iceberg/2023/papermosaik/VenueData/venues_data.json' .
+    path :=  "workingDirectory fullName , '/pharo-local/iceberg/2023/papermosaik/VenueData/venues_data.json'" '/home/karma/Downloads/venues_with_CSO_taxonomy.json' .
 	 Transcript show: path; cr. 
 
     fileReference := path asFileReference.

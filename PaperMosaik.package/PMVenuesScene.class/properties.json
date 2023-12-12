@@ -1,15 +1,14 @@
 {
 	"commentStamp" : "",
-	"super" : "RSCanvas",
+	"super" : "PMScene",
 	"category" : "PaperMosaik-Fractal",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"startYear",
-		"endYear",
-		"duration"
+		"figures",
+		"fields"
 	],
-	"name" : "PMScene",
+	"name" : "PMVenuesScene",
 	"type" : "normal"
 }

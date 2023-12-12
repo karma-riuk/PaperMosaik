@@ -1,0 +1,21 @@
+{
+	"commentStamp" : "a 12/12/2023 09:13",
+	"super" : "PMScene",
+	"category" : "PaperMosaik-Fractal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"figureType",
+		"centralFigure",
+		"radialFigures",
+		"window",
+		"radius",
+		"minConnectionThickness",
+		"maxConnectionThickness",
+		"connections",
+		"cachedThicknesses"
+	],
+	"name" : "PMResearchersScene",
+	"type" : "normal"
+}
