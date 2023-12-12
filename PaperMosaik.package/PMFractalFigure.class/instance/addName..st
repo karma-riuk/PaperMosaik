@@ -11,6 +11,7 @@ addName: aName
 	
 	label add: labelName.
 	label add: labelRest.
+	label adjustToChildren.
 	
 	self placeLabel.
 	self add: label.

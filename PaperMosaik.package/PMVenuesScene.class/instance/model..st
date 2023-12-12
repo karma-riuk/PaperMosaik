@@ -1,6 +1,12 @@
 animation
 model: someFields
-	fields := someFields.
-	figures := someFields collect: [ :field | PMFractalFigureByVenue new model: field. ] into: RSGroup new.
+	 
+	fields := someFields reject: [ :field | field = 'undefined' ].
+	figures := fields collect: [ :field | PMFractalFigureByVenue new model: field ] into: RSGroup new.
 	self addAll: figures.
-	RSGridLayout on: figures.
+	figures do: [ :fig | fig adjustToChildren ].
+	self layoutFigures.
+	self zoomToFit.
+	startYear := 1970.
+	endYear := 2020.
+	

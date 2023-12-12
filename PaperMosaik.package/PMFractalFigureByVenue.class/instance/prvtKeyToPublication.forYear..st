@@ -6,7 +6,7 @@ prvtKeyToPublication: aField forYear: aYear
 	
 
 	fractalPartsContents keysDo: [ :venue | 
-		keyToPublication at: (PMLabeledObject new label: (venue name); object: venue)
+		ret at: (PMLabeledObject new label: (venue name); object: venue)
 			put: (
 			(venue publicationsByYear includesKey: aYear) 
 				ifTrue: [venue publicationsByYear at: aYear ]
