@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "PMRadialLayout",
+	"name" : "PMSpiralLayout",
 	"type" : "normal"
 }
