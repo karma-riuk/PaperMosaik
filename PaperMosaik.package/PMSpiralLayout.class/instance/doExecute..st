@@ -1,19 +1,16 @@
 hook
 doExecute: elements
-	| angle rad center angleIncrement |
-	rad := self computeRadiusFor: elements.
-	center := Point x: rad y: rad.
-	angleIncrement := self computeIncrementalAngleFor: elements.
+	| angle rad angleIncrement |
+"	rad := self computeRadiusFor: elements."
+	rad := 2500.
+"	angleIncrement := 0.08."
 	angle := self initialAngle.
 	elements
-		do: [ :each | 
-			| point fctr |
-			"The factor weighs the angleIncrement"
-			"The angle is increased by half of the total increment,
-			then the point is set, and then it's increased by the other half"
-			"This is to consider both last and next elements weights"
-			fctr := (elements size)*(each diagonal)/(self weightSum: elements).
-			angle := angle + (angleIncrement*(fctr/2)).
-			point := center + (Point r: rad theta: angle).
-			angle := angle + (angleIncrement*(fctr/2)).
+		do: [ :each | | point diag |
+			diag := each diagonal.
+			angleIncrement := diag / rad.
+			rad := rad + ((diag / 12)) .
+			angle := angle + (angleIncrement/2).
+			point := Point r: rad theta: angle.
+			angle := angle + (angleIncrement/2).
 			translator translate: each to: point. ]

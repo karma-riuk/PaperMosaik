@@ -1,6 +1,7 @@
 helper methods
 layoutFigures
-	| oldIndex currentIndex circle iteration |
+	PMSpiralLayout on: radialFigures.
+	"| oldIndex currentIndex circle iteration |
 	currentIndex := 0.
 	iteration := 0.
 	
@@ -10,9 +11,9 @@ layoutFigures
 		currentSize := iteration * 10. 
 		currentIndex := oldIndex + currentSize.
 		currentIndex := currentIndex min: radialFigures size.
-		"The following check is to avoid having a small circle near the center for the last collaborators"
+		""The following check is to avoid having a small circle near the center for the last collaborators""
 		radialFigures size - currentIndex < currentSize ifTrue: [ currentIndex := radialFigures size ].
 		circle := radialFigures copyFrom: oldIndex + 1 to: currentIndex.
 		PMSpiralLayout on: circle.
 		RSLocation new center; stick: circle on: centralFigure.
-		].
+		]."
