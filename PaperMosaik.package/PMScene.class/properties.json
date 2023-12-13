@@ -1,23 +1,14 @@
 {
-	"commentStamp" : "ArnaudFauconnet 12/1/2023 20:40",
+	"commentStamp" : "",
 	"super" : "RSCanvas",
 	"category" : "PaperMosaik-Fractal",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"figureType",
-		"centralFigure",
-		"radialFigures",
 		"startYear",
 		"endYear",
-		"window",
-		"radius",
-		"minConnectionThickness",
-		"maxConnectionThickness",
-		"connections",
-		"duration",
-		"cachedThicknesses"
+		"duration"
 	],
 	"name" : "PMScene",
 	"type" : "normal"

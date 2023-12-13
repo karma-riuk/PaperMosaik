@@ -7,10 +7,11 @@ addName: aName
 	 
 	labelName := RSLabel new text: name.
 	labelRest := RSLabel new text: rest.
-	RSLocation new below; center; offset: 0 @ -100; stick: labelRest on: labelName.
+	RSLocation new below; center; stick: labelRest on: labelName.
 	
 	label add: labelName.
 	label add: labelRest.
+	label adjustToChildren.
 	
 	self placeLabel.
 	self add: label.
