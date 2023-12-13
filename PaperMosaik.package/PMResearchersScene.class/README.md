@@ -18,9 +18,9 @@ To animate a researcher and his collaborators from 2000 to 2020 with a 5 year wi
 ```st
 PMResearcher Researchers.
 
-lanza := PMResearchersScene Researchers at: 'Michele Lanza'.
+lanza := PMResearcher Researchers at: 'Michele Lanza'.
 
-scene := PMScene new model: lanza; startYear: 2000; endYear: 2020; window: 5.
+scene := PMResearchersScene new model: lanza; startYear: 2000; endYear: 2020; window: 5.
 
 scene open.
 scene animate.

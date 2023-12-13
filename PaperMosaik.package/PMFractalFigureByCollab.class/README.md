@@ -7,7 +7,7 @@ PMResearcher Researchers.
 
 lanza := PMResearcher Researchers at: 'Michele Lanza'.
 
-scene := PMScene new figureType: PMFractalFigureByCollab; model: lanza.
+scene := PMResearchersScene new figureType: PMFractalFigureByCollab; model: lanza.
 
 scene open.
 ```
