@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "PMFractalFigure",
+	"category" : "PaperMosaik-Fractal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"year"
+	],
+	"name" : "PMFractalFigureByField",
+	"type" : "normal"
+}

@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "PMScene",
+	"category" : "PaperMosaik-Fractal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"figure"
+	],
+	"name" : "PMFieldsScene",
+	"type" : "normal"
+}
