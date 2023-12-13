@@ -1,6 +1,7 @@
 helper methods
 layoutFigures
-	PMSpiralLayout on: radialFigures.
+	PMSpiralLayout new radius: centralFigure diagonal; initialAngleInDegree: -109; on: radialFigures.
+	
 	"| oldIndex currentIndex circle iteration |
 	currentIndex := 0.
 	iteration := 0.
