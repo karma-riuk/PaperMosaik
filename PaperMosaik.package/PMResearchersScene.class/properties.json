@@ -14,7 +14,8 @@
 		"minConnectionThickness",
 		"maxConnectionThickness",
 		"connections",
-		"cachedThicknesses"
+		"cachedThicknesses",
+		"layoutType"
 	],
 	"name" : "PMResearchersScene",
 	"type" : "normal"

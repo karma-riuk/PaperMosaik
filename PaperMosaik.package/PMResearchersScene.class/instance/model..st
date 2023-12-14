@@ -14,6 +14,8 @@ model: aResearcher
 	self adjustFontSize.
 	self connectFigures.
 	
+	
+	
 
 
 	
